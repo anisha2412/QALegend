@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import Constants.Constants;
+import PageClasses.QALegendClientsPage;
+import PageClasses.QALegendEventPage;
 import PageClasses.QALegendHomePage;
 import PageClasses.QALegendItemPage;
 import PageClasses.QALegendLoginPage;
@@ -26,6 +28,8 @@ public class Base {
 	QALegendLoginPage loginpage;       //obj of login page
 	QALegendHomePage homepage;
 	QALegendItemPage itemspage;
+	QALegendEventPage eventpage;
+	QALegendClientsPage clientpage;
 	
 	@BeforeMethod(alwaysRun = true)                       // to always run this method before testcases
 	@Parameters({"browser"})
@@ -35,13 +39,13 @@ public class Base {
 		fis = new FileInputStream(Constants.CONFIGFILE);  // classname.varname [to acces static var] | ppty file path
 		properties.load(fis);                             // load congfig file to read
 		
-		if(browserName.equalsIgnoreCase(browserName)) {
+		if(browserName.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();			
 		}
-		else if(browserName.equalsIgnoreCase(browserName)) {
+		else if(browserName.equalsIgnoreCase("Firefox")) {
 			driver = new FirefoxDriver();			
 		}
-		else if(browserName.equalsIgnoreCase(browserName)) {
+		else if(browserName.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();			
 		}
 		else {
@@ -54,6 +58,8 @@ public class Base {
 		loginpage = new QALegendLoginPage(driver);  // login page obj initalizatn | always initalize last other wise nullPointerExp error occur
 		homepage = new QALegendHomePage(driver);
 		itemspage = new QALegendItemPage(driver);
+		eventpage = new QALegendEventPage(driver);
+		clientpage = new QALegendClientsPage(driver);
 	
 	
 	

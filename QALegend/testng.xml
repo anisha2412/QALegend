@@ -4,11 +4,13 @@
 	<parameter name="browser" value="Chrome"></parameter>
   	<test thread-count="5" name="Test">
    	<classes>
-      	<class name="TestScripts.QALegendItemPageTest"/>
-      		<!--<methods>
-      			<include name="addItem"></include>
+      	<class name="TestScripts.QALegendClientPageTest">
+      		<methods>
+      			<!--<include name="addItem"></include>-->
+      			<!--<include name="addEvent"></include>-->
+      			<include name="addClient"></include>
       		</methods>
-      	</class>-->
+      	</class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -4,12 +4,12 @@
   <parameter name="browser" value="Chrome"/>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestScripts.QALegendItemPageTest">
+      <class name="TestScripts.QALegendClientPageTest">
         <methods>
           <include name="browserinitailzation"/>
-          <include name="addItem"/>
+          <include name="addClient"/>
         </methods>
-      </class> <!-- TestScripts.QALegendItemPageTest -->
+      </class> <!-- TestScripts.QALegendClientPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

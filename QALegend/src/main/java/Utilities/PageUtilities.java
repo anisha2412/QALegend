@@ -52,7 +52,7 @@ public class PageUtilities {
 	}	
 	public void scrollPage() {
 		JavascriptExecutor js = (JavascriptExecutor)driver ;
-		js.executeScript("window.scrollBy(0,1000)");			
+		js.executeScript("window.scrollBy(0,2000)");			
 	}
 	public boolean isElementDisplayed(WebElement element) {
 		return(element.isDisplayed());			 // return result back

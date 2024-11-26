@@ -9,23 +9,34 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">6,034</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">16,738</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">TestScripts.QALegendItemPageTest</td><td><a href="#m0">browserinitailzation</a></td><td rowspan="1">1732284256475</td><td rowspan="1">5894</td></tr><tr><th colspan="4">Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">TestScripts.QALegendItemPageTest</td><td><a href="#m1">addItem</a></td><td rowspan="1">1732284262404</td><td rowspan="1">1</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestScripts.QALegendClientPageTest</td><td><a href="#m0">addClient</a></td><td rowspan="1">1732553877095</td><td rowspan="1">12780</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">TestScripts.QALegendItemPageTest#browserinitailzation</h3><table class="result"><tr class="param"><th>Parameter #1</th></tr><tr class="param stripe"><td>Chrome</td></tr><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Class.getConstructor(java.lang.Class[])&quot; because &quot;pageClassToProxy&quot; is null
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:124)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:62)
-	at PageClasses.QALegendLoginPage.&lt;init&gt;(QALegendLoginPage.java:30)
-	at TestScripts.Base.browserinitailzation(Base.java:54)
+<h2>Test</h2><h3 id="m0">TestScripts.QALegendClientPageTest#addClient</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=131.0.6778.86)
+Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;22.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [daf198e2ef184d0596513f46ac5a1a24, sendKeysToElement {value=[Ljava.lang.CharSequence;@18ca3c62, id=f.1FEAF36F3CE5C11AA7A206A96A6B5462.d.99E0382277813CE59139128D1B4C7296.e.98}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\ANISHA\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63864}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63864/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (daf198e2ef184d0596513f46ac5a1a24)] -&gt; id: website]
+Session ID: daf198e2ef184d0596513f46ac5a1a24
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.sendKeys(Unknown Source)
+	at Utilities.PageUtilities.enterTextOnWebElement(PageUtilities.java:23)
+	at PageClasses.QALegendClientsPage.addClient(QALegendClientsPage.java:53)
+	at TestScripts.QALegendClientPageTest.addClient(QALegendClientPageTest.java:18)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">TestScripts.QALegendItemPageTest#addItem</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;java.lang.Class.getConstructor(java.lang.Class[])&quot; because &quot;pageClassToProxy&quot; is null
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:124)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:62)
-	at PageClasses.QALegendLoginPage.&lt;init&gt;(QALegendLoginPage.java:30)
-	at TestScripts.Base.browserinitailzation(Base.java:54)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
