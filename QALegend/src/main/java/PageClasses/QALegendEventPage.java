@@ -31,8 +31,8 @@ public class QALegendEventPage {
 	@FindBy(id="end_date")
 	WebElement event_end_datefield;
 	
-//	@FindBy(xpath = "(//input[@class='toggle_specific'])[1]")   //radio btn - only me
-//	WebElement event_sharewithfield;
+	@FindBy(xpath = "(//input[@class='toggle_specific'])[1]")   //radio btn - only me
+	WebElement event_sharewithfield;
 	
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement event_savebtn;
@@ -40,7 +40,16 @@ public class QALegendEventPage {
 //	@FindBy(xpath = "//span[text()='event19035']")
 //	WebElement calender_eventtitle;                  //title for assertion
 	
-		
+	
+	@FindBy(xpath = "//span[@class='fc-title']")
+	WebElement event_titletoedit;
+	
+	
+	@FindBy(xpath = "//a[@title='Edit event' and contains(@class, 'btn btn-default')]")
+	WebElement event_editbtn;
+	
+	
+			
 	public QALegendEventPage(WebDriver driver) {
 		this.driver=driver;
 		this.pageutilities = new PageUtilities(driver);
@@ -53,9 +62,8 @@ public class QALegendEventPage {
 		pageutilities.enterTextOnWebElement(event_start_datefield, startdate);
 		pageutilities.enterTextOnWebElement(event_end_datefield, enddate);
 	
-//		Thread.sleep(3000);
-//		pageutilities.radiobtnClick(event_sharewithfield);
-
+		Thread.sleep(3000);
+		pageutilities.radiobtnClick(event_sharewithfield);
 		pageutilities.clickOnElement(event_savebtn);
 		return title;            // to check title for assertion
 	}
@@ -71,7 +79,24 @@ public class QALegendEventPage {
 //	}
 	
 
-   
+	public void clickOnEventsToEdit() {
+		event_titletoedit.click();
+	}
+	
+	public void clickOnEditEventbtn() {
+		event_editbtn.click();
+	}
+	
+	public void clearEventTitlefield() {
+		event_titlefield.clear();
+	}
+	
+	public String editEvent(String title) {
+		pageutilities.enterTextOnWebElement(event_titlefield, title);
+		pageutilities.clickOnElement(event_savebtn);
+		return title;
+	}
+	
 
 
 }

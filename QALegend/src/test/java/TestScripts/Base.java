@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
@@ -17,6 +18,8 @@ import PageClasses.QALegendEventPage;
 import PageClasses.QALegendHomePage;
 import PageClasses.QALegendItemPage;
 import PageClasses.QALegendLoginPage;
+import PageClasses.QALegendNotePage;
+import PageClasses.QALegendProjectsPage;
 
 public class Base {
 	
@@ -24,12 +27,13 @@ public class Base {
 	public Properties properties;  // object for handling pptys file
 	public FileInputStream fis;   // for handling file opertions in ppty file
 	
-	
 	QALegendLoginPage loginpage;       //obj of login page
 	QALegendHomePage homepage;
 	QALegendItemPage itemspage;
 	QALegendEventPage eventpage;
 	QALegendClientsPage clientpage;
+	QALegendProjectsPage  projectpage;
+	QALegendNotePage notepage;
 	
 	@BeforeMethod(alwaysRun = true)                       // to always run this method before testcases
 	@Parameters({"browser"})
@@ -60,8 +64,13 @@ public class Base {
 		itemspage = new QALegendItemPage(driver);
 		eventpage = new QALegendEventPage(driver);
 		clientpage = new QALegendClientsPage(driver);
+		projectpage = new QALegendProjectsPage(driver);
+		notepage = new QALegendNotePage(driver);
+		
+	}
 	
-	
-	
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
 	}
 }

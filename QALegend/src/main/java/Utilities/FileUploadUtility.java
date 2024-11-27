@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 
 public class FileUploadUtility {
 	
-	public void fileUploadUsingRobotClass(String path) throws AWTException {
+	public static void fileUploadUsingRobotClass(String path) throws AWTException {
 		StringSelection ss = new StringSelection(path);        //class's obj
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);     // ss know path | copying path to clipboard
 		Robot robot = new Robot();                     // robot class obj | used for keyboard evnts

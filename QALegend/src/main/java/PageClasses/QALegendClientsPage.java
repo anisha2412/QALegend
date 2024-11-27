@@ -24,9 +24,9 @@ public class QALegendClientsPage {
 	@FindBy(id="country")
 	WebElement client_countryfield;
 	
-	//@FindBy(xpath ="//input[@id='website']")
+	@FindBy(xpath ="//input[@id='website']")
 	
-	@FindBy(id ="website")
+	//@FindBy(id ="website")
 	WebElement client_websitefield;
 		
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
@@ -36,7 +36,11 @@ public class QALegendClientsPage {
 	WebElement client_searchbox;
 	
 	@FindBy(xpath = "(//tr[@class='odd']//descendant ::a)[1]")
-	WebElement table_client_companyname;          //  searched company name
+	WebElement table_client_companyname;          //  to fetch searched company name of assrtn
+	
+		
+	@FindBy(xpath = "//label[text()='Company name']")
+	WebElement clientmodel_companynamelabel;                 // to hover over company name to scroll modal
 	
 	public QALegendClientsPage(WebDriver driver) {
 		this.driver= driver;
@@ -48,8 +52,9 @@ public class QALegendClientsPage {
 		pageutilities.enterTextOnWebElement(client_company_namefield, company_name);
 		pageutilities.enterTextOnWebElement(client_cityfield, city);
 		pageutilities.enterTextOnWebElement(client_countryfield, country);
-//		pageutilities.scrollPage();
-//		Thread.sleep(2000);
+		pageutilities.hoverOverElement(clientmodel_companynamelabel);             //hover compnyname label and scrl
+		pageutilities.scrollPage();
+		Thread.sleep(2000);
 		pageutilities.enterTextOnWebElement(client_websitefield, website);
 		pageutilities.clickOnElement(client_savebtn);
 		return company_name;            // to check company_name for assertion
@@ -59,7 +64,7 @@ public class QALegendClientsPage {
 		addclientbtn.click();
 	}
 	
-	public String getClientCompanyName() {                    //to fetch companyname text value searched 
+	public String getClientCompanyName() {                    //to fetch companyname text from searchelist 
 		String companyname = table_client_companyname.getText();
 		return companyname;
 	}

@@ -33,6 +33,17 @@ public class QALegendItemPage {
 	
 	@FindBy(xpath = "//td[@class=' w20p']")
 	WebElement table_itemtitle;          //  searched item title in table to fetch text value for assertion
+	
+	
+	@FindBy(xpath = "//a[@title='Edit item' and contains(@class, 'edit')]")
+	WebElement item_editicon;  
+	
+	@FindBy(xpath = "//a[@title='Delete' and contains(@class, 'delete')]")
+	WebElement item_deleteicon;          // delete icon
+	
+	
+//	@FindBy(xpath = "//button[@id='confirmDeleteButton']")
+//	WebElement item_deleteconfirmationbtn;          // no delete cnfrmtn for item
 			
 	public QALegendItemPage(WebDriver driver) {
 		this.driver= driver;
@@ -61,6 +72,24 @@ public class QALegendItemPage {
 		//WaitUtility.waitForVisiblityOfAnElement(driver, item_searchbox);
 		pageutilities.enterTextOnWebElement(item_searchbox, title);
 	}
+	
+	public void clickOnEditItemiIcon() {
+		pageutilities.clickOnElement(item_editicon);
+	}
+	
+	public void clearItemTitlefield() {
+		titlefield.clear();
+	}
 
+	public String editItem(String title) {	
+		pageutilities.clickOnElement(titlefield);		
+		pageutilities.enterTextOnWebElement(titlefield, title);							
+		pageutilities.clickOnElement(item_savebtn);
+		return title;		
+	}
+	
+	public void clickOnDeleteItemiIcon() {
+		pageutilities.clickOnElement(item_deleteicon);
+	}
 
 }

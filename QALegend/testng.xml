@@ -4,13 +4,43 @@
 	<parameter name="browser" value="Chrome"></parameter>
   	<test thread-count="5" name="Test">
    	<classes>
-      	<class name="TestScripts.QALegendClientPageTest">
-      		<methods>
-      			<!--<include name="addItem"></include>-->
-      			<!--<include name="addEvent"></include>-->
-      			<include name="addClient"></include>
+      	
+     	<class name="TestScripts.QALegendEventPageTest">
+	      	<methods>
+	      		<exclude name="addEvent"></exclude>
+	      		<include name="editEvent"></include>
+	      	</methods>
+      	</class>
+      	
+      <!-- <class name="TestScripts.QALegendClientPageTest">
+	      	<methods>
+	      		<include name="addClient"></include>
+	      	</methods>
+      	</class>
+      	
+      	
+      	 <class name="TestScripts.QALegendProjectsPageTest">
+      		<methods>     			
+      			<include name="addProject"></include>
       		</methods>
       	</class>
+      	
+      <class name="TestScripts.QALegendItemPageTest">
+      		<methods>     			
+      			<exclude name="addItem"></exclude>
+      			<exclude name="editItem"></exclude>
+      			<include name="deleteItem"></include>
+      		</methods>
+      	</class>-->
+      	
+      	<!--<class name="TestScripts.QAlegendNotePageTest">
+      		<methods>     			
+      			<exclude name="addNote"></exclude>
+      			<include name="editNote"></include>
+      			<include name="deleteNote"></include>
+      		</methods>
+      	</class>-->
+      	
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

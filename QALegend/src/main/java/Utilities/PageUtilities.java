@@ -52,14 +52,14 @@ public class PageUtilities {
 	}	
 	public void scrollPage() {
 		JavascriptExecutor js = (JavascriptExecutor)driver ;
-		js.executeScript("window.scrollBy(0,2000)");			
+		js.executeScript("window.scrollBy(0,1000)");			
 	}
 	public boolean isElementDisplayed(WebElement element) {
 		return(element.isDisplayed());			 // return result back
 	}
 	
 //task	
-	public void clickOnCtrlKey() {
+	public void ctrlKeyPress() {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.CONTROL).build().perform();
 	}
@@ -71,18 +71,21 @@ public class PageUtilities {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ALT).build().perform();
 	}	
-	public void clickOnEnterKey() {
+	public void enterKeyPress() {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).build().perform();
 	}	
+	
+
+	
 	public boolean isElementEnabled(WebElement element) {
 		return(element.isEnabled());			
 	}	
-	public void holdKey() {
+	public void holdBackspaseKey() {
 		Actions action = new Actions(driver);
 		action.keyDown(Keys.BACK_SPACE).build().perform();
 	}	
-	public void releaseKey() {
+	public void releaseBackspaseKey() {
 		Actions action = new Actions(driver);
 		action.keyUp(Keys.BACK_SPACE).build().perform();
 	}
@@ -117,9 +120,17 @@ public class PageUtilities {
 		action.doubleClick(element).build().perform();
 	}
 	
-	
-	
-	
-	
-	
+		
+//	public void selectAllText() {
+//	    Actions action = new Actions(driver);
+//	    action.keyDown(Keys.CONTROL)    // Hold down the CTRL key
+//	          .sendKeys("a")            // Press 'A'
+//	          .keyUp(Keys.CONTROL)      // Release the CTRL key
+//	          .perform();               // Execute the action
+//	}
+
+	public void aKeyPress() {
+		Actions action = new Actions(driver);
+		action.sendKeys("A").build().perform();
+	}
 }

@@ -28,5 +28,23 @@ public class QALegendItemPageTest extends Base {
 		itemspage.searchItem(item_title);
 		Assert.assertEquals(itemspage.getItemTitle(), item_title);                                            //for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
 	}
-
+	
+	@Test
+	public void editItem() throws InterruptedException {
+		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  		 		
+		homepage.clickOnDashboardItemsBtn();              
+		itemspage.clickOnEditItemiIcon();
+		itemspage.clearItemTitlefield();
+		String item_title = itemspage.editItem(properties.getProperty("edit_itemtitle") + FakeUtility.randomNumberGenerator()); 		
+		Thread.sleep(4000);	
+		itemspage.searchItem(item_title);
+		Assert.assertEquals(itemspage.getItemTitle(), item_title);                                            //for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
+	}
+	
+	@Test
+	public void deleteItem() {
+		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
+		homepage.clickOnDashboardItemsBtn(); 
+		itemspage.clickOnDeleteItemiIcon();
+	}
 }

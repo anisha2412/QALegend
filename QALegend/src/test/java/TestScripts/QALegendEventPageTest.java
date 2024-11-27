@@ -24,4 +24,21 @@ public WebDriver driver;
 //		Thread.sleep(3000);
 //		Assert.assertEquals(eventpage.getEventTitle(), title_event);  
 	}
+	
+	
+	@Test
+	public void editEvent() throws InterruptedException {
+		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
+		homepage.clickOnDashboardEventsBtn();  
+		eventpage.clickOnEventsToEdit();
+		eventpage.clickOnEditEventbtn();
+		eventpage.clearEventTitlefield();
+					
+		String title_event = eventpage.editEvent(properties.getProperty("edit_eventtitle") + FakeUtility.randomNumberGenerator());
+		
+		
+//		System.out.println(title_event);
+//		Thread.sleep(3000);
+//		Assert.assertEquals(eventpage.getEventTitle(), title_event);  
+	}
 }
