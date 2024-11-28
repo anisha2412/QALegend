@@ -33,6 +33,20 @@
 	    	<artifactId>poi-ooxml</artifactId>
 	    	<version>5.2.3</version>
 		</dependency>
+		
+		<!-- extent report dependency -->
+		<dependency>
+        	<groupId>com.aventstack</groupId>
+       		<artifactId>extentreports</artifactId>
+        	<version>4.1.4</version>
+    	</dependency>
+    	
+        <dependency>
+        	<groupId>commons-io</groupId>
+        	<artifactId>commons-io</artifactId>
+        	<version>2.6</version>
+        </dependency>
+
 				
   </dependencies>
   

@@ -2,14 +2,18 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
   <parameter name="browser" value="Chrome"/>
+  <listeners>
+    <listener class-name="TestScripts.Listeners"/>
+  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestScripts.QAlegendNotePageTest">
+      <class name="TestScripts.QALegendClientPageTest">
         <methods>
           <include name="browserinitailzation"/>
-          <include name="editNote"/>
+          <include name="addClient"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- TestScripts.QAlegendNotePageTest -->
+      </class> <!-- TestScripts.QALegendClientPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
