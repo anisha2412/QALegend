@@ -51,14 +51,21 @@ public class PageUtilities {
 		actions.contextClick(element).build().perform();
 	}	
 	public void scrollPage() {
-		JavascriptExecutor js = (JavascriptExecutor)driver ;
-		js.executeScript("window.scrollBy(0,1000)");			
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0,250)");
 	}
+	
+	
+	public void scrollElement(WebElement element) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", element);
+	}
+
+
 	public boolean isElementDisplayed(WebElement element) {
 		return(element.isDisplayed());			 // return result back
 	}
 	
-//task	
 	public void ctrlKeyPress() {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.CONTROL).build().perform();
@@ -75,9 +82,7 @@ public class PageUtilities {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).build().perform();
 	}	
-	
-
-	
+		
 	public boolean isElementEnabled(WebElement element) {
 		return(element.isEnabled());			
 	}	
@@ -89,10 +94,7 @@ public class PageUtilities {
 		Actions action = new Actions(driver);
 		action.keyUp(Keys.BACK_SPACE).build().perform();
 	}
-	public void clickHiddenElement(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor)driver ;
-		js.executeScript("arguments[0].click()",element);
-	}	
+	
 	public void acceptAlert() {
 		driver.switchTo().alert().accept();
 	}	
@@ -119,18 +121,10 @@ public class PageUtilities {
 		Actions action = new Actions(driver);
 		action.doubleClick(element).build().perform();
 	}
-	
 		
-//	public void selectAllText() {
-//	    Actions action = new Actions(driver);
-//	    action.keyDown(Keys.CONTROL)    // Hold down the CTRL key
-//	          .sendKeys("a")            // Press 'A'
-//	          .keyUp(Keys.CONTROL)      // Release the CTRL key
-//	          .perform();               // Execute the action
-//	}
-
-	public void aKeyPress() {
-		Actions action = new Actions(driver);
-		action.sendKeys("A").build().perform();
+	public void radiobtnJSClick(WebElement element) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("arguments[0].click();", element);
 	}
+
 }

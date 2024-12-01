@@ -17,10 +17,9 @@ public WebDriver driver;
 		clientpage.clickOnAddClientBtn();              
 		String companyname = clientpage.addClient(properties.getProperty("client_companyname") + FakeUtility.randomNumberGenerator(), 
 				properties.getProperty("client_city"), 
-				properties.getProperty("client_country") ,
+				properties.getProperty("client_country"),
 				properties.getProperty("client_website") + FakeUtility.randomNumberGenerator()); 		
-		Thread.sleep(4000);
-		clientpage.searchItem(companyname);
+		clientpage.searchClient(companyname);
 		Assert.assertEquals(clientpage.getClientCompanyName(), companyname);     
 	}
 	

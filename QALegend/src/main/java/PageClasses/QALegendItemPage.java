@@ -11,7 +11,7 @@ import Utilities.WaitUtility;
 public class QALegendItemPage {
 	
 	public WebDriver driver;
-	private PageUtilities pageutilities;     // object
+	private PageUtilities pageutilities;     
 	
 	@FindBy(xpath = "//a[@class='btn btn-default']")
 	WebElement additemsbtn;
@@ -28,22 +28,20 @@ public class QALegendItemPage {
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement item_savebtn;
 		
-	@FindBy(xpath = "//div[@id='item-table_filter']//descendant::input")
+	@FindBy(xpath = "//div[@id='item-table_filter' and @class='dataTables_filter']//descendant::input")	
 	WebElement item_searchbox;
 	
 	@FindBy(xpath = "//td[@class=' w20p']")
-	WebElement table_itemtitle;          //  searched item title in table to fetch text value for assertion
-	
-	
+	WebElement table_itemtitle;                              //  searched item title in table to fetch text value for assertion
+		
 	@FindBy(xpath = "//a[@title='Edit item' and contains(@class, 'edit')]")
 	WebElement item_editicon;  
 	
 	@FindBy(xpath = "//a[@title='Delete' and contains(@class, 'delete')]")
-	WebElement item_deleteicon;          // delete icon
+	WebElement item_deleteicon;                              // delete icon
 	
-	
-//	@FindBy(xpath = "//button[@id='confirmDeleteButton']")
-//	WebElement item_deleteconfirmationbtn;          // no delete cnfrmtn for item
+	@FindBy(xpath = "//div[@id='ajaxModal' and @style='display: none;']") 
+	WebElement modal_display_none;
 			
 	public QALegendItemPage(WebDriver driver) {
 		this.driver= driver;
@@ -60,16 +58,16 @@ public class QALegendItemPage {
 		pageutilities.enterTextOnWebElement(item_descriptionfield, description);
 		pageutilities.enterTextOnWebElement(item_ratefield, rate);
 		pageutilities.clickOnElement(item_savebtn);
-		return title;            // to check title for assertion
+		return title;                                      // to check title for assertion
 	}
 	
-	public String getItemTitle() {                    //to fetch title value
+	public String getItemTitle() {                         // to fetch title value
 		String itemtitle = table_itemtitle.getText();
 		return itemtitle;
 	}
 	
 	public void searchItem(String title) {
-		//WaitUtility.waitForVisiblityOfAnElement(driver, item_searchbox);
+		WaitUtility.waitForAttributeToBe(driver, modal_display_none, "style", "display: none;");
 		pageutilities.enterTextOnWebElement(item_searchbox, title);
 	}
 	

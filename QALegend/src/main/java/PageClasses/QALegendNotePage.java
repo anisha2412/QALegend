@@ -1,12 +1,18 @@
 package PageClasses;
 
 
+import java.awt.AWTException;
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import Utilities.FileUploadUtility;
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QALegendNotePage {
 	
@@ -32,19 +38,28 @@ public class QALegendNotePage {
 	WebElement note_searchbox;
 	
 	@FindBy(xpath = "(//a[@class='edit'])[1]")
-	WebElement note_notetitle;          // for searching 
+	WebElement note_notetitle;                                                  // for searching 
 	
 	@FindBy(xpath = "//a[@title='Edit note' and contains(@class, 'edit')]")
-	WebElement note_editicon;          // edit icon
+	WebElement note_editicon;                                                   // edit icon
 	
 	@FindBy(xpath = "//a[@title='Delete note' and contains(@class, 'delete')]")
-	WebElement note_deleteicon;          // delete icon
-	
-	
+	WebElement note_deleteicon;                                                 // delete icon
+		
 	@FindBy(xpath = "//button[@id='confirmDeleteButton']")
-	WebElement note_deleteconfirmationbtn;          // delete cnfrmtn btn
+	WebElement note_deleteconfirmationbtn;                                      // delete cnfrmtn btn
+	
+	@FindBy(xpath = "//div[@class='preview']//following::img[contains(@class,'upload-thumbnail-sm')]")
+	WebElement file_preview;
+	
+	@FindBy(xpath = "//div[@id='ajaxModal' and @style='display: none;']") 
+	WebElement modal_display_none;
+	
+	@FindBy(xpath = "(//div[@class='ps__thumb-y'])[7]")
+	WebElement modal_scrollbar;   
 	
 	
+			 
 		
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
@@ -52,13 +67,17 @@ public class QALegendNotePage {
 		PageFactory.initElements(driver, this);
 	}
 		
-	public String addNote(String title) {
-		pageutilities.enterTextOnWebElement(note_titlefield, title);		
-		pageutilities.clickOnElement(note_label);
-		pageutilities.enterKeyPress();
-		pageutilities.clickOnElement(note_uploadfilebtn);			
-		pageutilities.clickOnElement(note_savbtn);
-		return title;		
+
+	public String addNote(String title) throws AWTException  {
+	    pageutilities.enterTextOnWebElement(note_titlefield, title);        
+	    pageutilities.clickOnElement(note_label);
+	    pageutilities.enterKeyPress();
+	    pageutilities.clickOnElement(note_uploadfilebtn);
+	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  
+	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview);  
+//	    pageutilities.hoverOverElement(modal_scrollbar);
+	    pageutilities.clickOnElement(note_savbtn);	    
+	    return title;        
 	}
 	
 	public void clickOnAddNotebtn() {
@@ -70,12 +89,13 @@ public class QALegendNotePage {
 		return note_title;
 	}
 	
-	public void searchItem(String title) {
+	public void searchNote(String title) {
+		WaitUtility.waitForAttributeToBe(driver, modal_display_none, "style", "display: none;");
 		pageutilities.enterTextOnWebElement(note_searchbox, title);
 	}
 	
 	public String getNoteFilePath() {
-		String filePath = "C:\\Users\\ANISHA\\Downloads\\maxresdefault.jpg";
+		String filePath = "C:\\Users\\ANISHA\\Downloads\\selenium.jpg";
 		return filePath;
 	}
 	
@@ -102,11 +122,18 @@ public class QALegendNotePage {
 		pageutilities.clickOnElement(note_deleteconfirmationbtn);
 	}
 		
-//	public String getDeletedID() {
-//		String title_id = note_deleteconfirmationbtn.getAttribute("data-id");	
-//		System.out.println(title_id);
-//		return title_id;
+//	public int getDeletedID() {
+//	    String title_id = note_deleteconfirmationbtn.getAttribute("data-id");
+//	    System.out.println(title_id);
+//	    return Integer.parseInt(title_id); // Convert to int
 //	}
-//	
+	
+	
+
+
+	
+	
+	
+
 
 }

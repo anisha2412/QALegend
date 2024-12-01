@@ -20,10 +20,8 @@ public class QALegendProjectsPageTest extends Base{
 //		projectpage.clickOnClientDropdown();
 		
 		String title_project = projectpage.addProject(properties.getProperty("project_title") + FakeUtility.randomNumberGenerator(),
-				properties.getProperty("project_deadline"));
-
-		Thread.sleep(4000);		
-		projectpage.searchItem(title_project);
+				properties.getProperty("project_deadline"));	
+		projectpage.searchProject(title_project);
 		Assert.assertEquals(projectpage.getProjectTitle(), title_project); 
 	}
 

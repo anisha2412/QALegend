@@ -14,9 +14,8 @@ import Utilities.ExtentReportNG;
 public class Listeners implements ITestListener {
 	
 	ExtentTest test;
-	ExtentReports extent = ExtentReportNG.getReportObject();   // calling method from ExtentReportNG cls
-	
-	ThreadLocal<ExtentTest> extenttest = new ThreadLocal<ExtentTest>();  //  threadlock | obj creatn
+	ExtentReports extent = ExtentReportNG.getReportObject();             // calling method from ExtentReportNG cls	
+	ThreadLocal<ExtentTest> extenttest = new ThreadLocal<ExtentTest>();  // threadlock | obj creatn
 
 	@Override
 	public boolean isEnabled() {
@@ -26,8 +25,8 @@ public class Listeners implements ITestListener {
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		ITestListener.super.onTestStart(result); //rslt has full details about testcase  
-		test = extent.createTest(result.getMethod().getMethodName());    //getMethodName - get crnt running TC name and give it to  createTest and it create a field for that TC in report inside feild tc pass or fail is specified
+		ITestListener.super.onTestStart(result);                         // rslt has full details about testcase  
+		test = extent.createTest(result.getMethod().getMethodName());    // getMethodName - get crnt running TC name and give it to  createTest and it create a field for that TC in report inside feild tc pass or fail is specified
 		extenttest.set(test);
 	}
 
@@ -40,7 +39,7 @@ public class Listeners implements ITestListener {
 	@Override
 	public void onTestFailure(ITestResult result) {
 		ITestListener.super.onTestFailure(result);
-		extenttest.get().fail(result.getThrowable()); // get failure result from console
+		extenttest.get().fail(result.getThrowable());                    // get failure result from console
 		extenttest.get().log(com.aventstack.extentreports.Status.FAIL, "Testcase Failed");
 	}
 
@@ -72,7 +71,7 @@ public class Listeners implements ITestListener {
 	@Override
 	public void onFinish(ITestContext context) {
 		ITestListener.super.onFinish(context);
-		extent.flush();                         // stop listeners monitoring
+		extent.flush();                                                   // stop listeners monitoring
 	}
 	
 	

@@ -10,7 +10,7 @@ import Utilities.PageUtilities;
 public class QALegendHomePage {
 	
 	public WebDriver driver;
-	private PageUtilities pageutilities;     // object
+	private PageUtilities pageutilities;     
 				
 	@FindBy(xpath = "//span[text()='Events']")
 	WebElement dashboard_eventsbtn;
@@ -25,7 +25,7 @@ public class QALegendHomePage {
 	WebElement dashboard_projectsbtn;
 	
 	@FindBy(xpath = "//span[text()='All Projects']")
-	WebElement dashboard_allprojectsoption;          //drpdwn option
+	WebElement dashboard_allprojectsoption;                       // drpdwn option
 	
 	@FindBy(xpath = "//span[text()='Items']")
 	WebElement dashboard_itemsbtn;
@@ -58,6 +58,6 @@ public class QALegendHomePage {
 	}
 	
 	public void clickOnDashboardItemsBtn() {
-		dashboard_itemsbtn.click();                        //drct clk without using pageutility | clk items btn in homepage
+		dashboard_itemsbtn.click();                               // drct clk without using pageutility | clk items btn in homepage
 	}
 }

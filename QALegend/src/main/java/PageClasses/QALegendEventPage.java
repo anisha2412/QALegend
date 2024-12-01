@@ -1,20 +1,16 @@
 package PageClasses;
 
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v129.webauthn.model.CredentialAsserted;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Utilities.PageUtilities;
-import dev.failsafe.internal.util.Assert;
+
 
 public class QALegendEventPage {
 		
 	public WebDriver driver;
-	private PageUtilities pageutilities;     // object
+	private PageUtilities pageutilities;     
 	
 	@FindBy(xpath = "//a[@class='btn btn-default']")
 	WebElement addeventbtn;
@@ -31,25 +27,21 @@ public class QALegendEventPage {
 	@FindBy(id="end_date")
 	WebElement event_end_datefield;
 	
-	@FindBy(xpath = "(//input[@class='toggle_specific'])[1]")   //radio btn - only me
+	@FindBy(xpath = "(//input[@class='toggle_specific'])[2]")   
 	WebElement event_sharewithfield;
 	
 	@FindBy(xpath = "//button[@class='btn btn-primary']")
 	WebElement event_savebtn;
 	
 //	@FindBy(xpath = "//span[text()='event19035']")
-//	WebElement calender_eventtitle;                  //title for assertion
-	
-	
+//	WebElement calender_eventtitle;                                    // title for assertion
+		
 	@FindBy(xpath = "//span[@class='fc-title']")
 	WebElement event_titletoedit;
-	
-	
+		
 	@FindBy(xpath = "//a[@title='Edit event' and contains(@class, 'btn btn-default')]")
 	WebElement event_editbtn;
 	
-	
-			
 	public QALegendEventPage(WebDriver driver) {
 		this.driver=driver;
 		this.pageutilities = new PageUtilities(driver);
@@ -61,11 +53,9 @@ public class QALegendEventPage {
 		pageutilities.enterTextOnWebElement(event_descriptionfield, description);
 		pageutilities.enterTextOnWebElement(event_start_datefield, startdate);
 		pageutilities.enterTextOnWebElement(event_end_datefield, enddate);
-	
-		Thread.sleep(3000);
-		pageutilities.radiobtnClick(event_sharewithfield);
+		pageutilities.radiobtnJSClick(event_sharewithfield);
 		pageutilities.clickOnElement(event_savebtn);
-		return title;            // to check title for assertion
+		return title;                                                    // to check event_title for assertion
 	}
 	
 	public void clickOnAddEventBtn() {
@@ -78,7 +68,6 @@ public class QALegendEventPage {
 //		return eventtitle;
 //	}
 	
-
 	public void clickOnEventsToEdit() {
 		event_titletoedit.click();
 	}

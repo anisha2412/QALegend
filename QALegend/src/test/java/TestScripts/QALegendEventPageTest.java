@@ -19,9 +19,7 @@ public WebDriver driver;
 				properties.getProperty("event_startdate"),
 				properties.getProperty("event_endate"));
 		
-		
-//		System.out.println(title_event);
-//		Thread.sleep(3000);
+		System.out.println(title_event);
 //		Assert.assertEquals(eventpage.getEventTitle(), title_event);  
 	}
 	
@@ -32,13 +30,10 @@ public WebDriver driver;
 		homepage.clickOnDashboardEventsBtn();  
 		eventpage.clickOnEventsToEdit();
 		eventpage.clickOnEditEventbtn();
-		eventpage.clearEventTitlefield();
-					
+		eventpage.clearEventTitlefield();					
 		String title_event = eventpage.editEvent(properties.getProperty("edit_eventtitle") + FakeUtility.randomNumberGenerator());
-		
-		
+				
 //		System.out.println(title_event);
-//		Thread.sleep(3000);
 //		Assert.assertEquals(eventpage.getEventTitle(), title_event);  
 	}
 }

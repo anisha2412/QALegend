@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import Utilities.PageUtilities;
+import Utilities.WaitUtility;
 
 public class QALegendProjectsPage {
 	
@@ -20,12 +21,11 @@ public class QALegendProjectsPage {
 	
 	@FindBy(id="deadline")
 	WebElement project_deadlinefield;
-	
-	
+		
 //	@FindBy(xpath = "(//a[@class='select2-choice'])[3]")
 //	WebElement client_dropdown;  
 //	
-//	//@FindBy(xpath = "//span[text()='My new client ']")       // to get client name text
+//	//@FindBy(xpath = "//span[text()='My new client ']")                       // to get client name text
 //	
 //	@FindBy(xpath = "//span[@id='select2-chosen-6']")      
 //	WebElement project_clientname;
@@ -41,6 +41,9 @@ public class QALegendProjectsPage {
 	
 	@FindBy(xpath = "(//tr[@class='odd']//descendant::a)[2]")
 	WebElement project_title;
+		
+	@FindBy(xpath = "//div[@id='ajaxModal' and @style='display: none;']") 
+	WebElement modal_display_none;
 	
 	public QALegendProjectsPage(WebDriver driver) {
 		this.driver= driver;
@@ -51,8 +54,6 @@ public class QALegendProjectsPage {
 	public String addProject(String title, String deadline) throws InterruptedException {
 		pageutilities.enterTextOnWebElement(project_titlefield, title);
 		
-//		pageutilities.clickOnElement(client_dropdown);
-//		Thread.sleep(2000);
 //		String clientname = project_clientname.getText();
 //		pageutilities.enterTextOnWebElement(clientsearch_textbox, "123");
 //		pageutilities.clickOnEnterKey();
@@ -71,7 +72,8 @@ public class QALegendProjectsPage {
 		return projecttitle;
 	}
 	
-	public void searchItem(String title) {
+	public void searchProject(String title) {
+		WaitUtility.waitForAttributeToBe(driver, modal_display_none, "style", "display: none;");
 		pageutilities.enterTextOnWebElement(project_searchbox, title);
 	}
 	

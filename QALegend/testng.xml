@@ -17,20 +17,28 @@
 	      	</methods>
       	</class>-->
       	
-       <class name="TestScripts.QALegendClientPageTest">
-	      	<methods>
-	      		<include name="addClient"></include>
-	      	</methods>
-      	</class>
-      	
-      	
-      	<!-- <class name="TestScripts.QALegendProjectsPageTest">
+      	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
-      			<include name="addProject"></include>
+      			<exclude name="addNote"></exclude>
+      			<exclude name="editNote"></exclude>
+      			<include name="deleteNote"></include>
       		</methods>
       	</class>
       	
-      <class name="TestScripts.QALegendItemPageTest">
+    <!--  <class name="TestScripts.QALegendClientPageTest">
+	      	<methods>
+	      		<include name="addClient"></include>
+	      	</methods>
+      	</class>-->
+      	
+      	
+      <!--	<class name="TestScripts.QALegendProjectsPageTest">
+      		<methods>     			
+      			<include name="addProject"></include>
+      		</methods>
+      	</class>-->
+      	
+    <!-- <class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<exclude name="addItem"></exclude>
       			<exclude name="editItem"></exclude>
@@ -38,13 +46,7 @@
       		</methods>
       	</class>-->
       	
-      	<!--<class name="TestScripts.QAlegendNotePageTest">
-      		<methods>     			
-      			<exclude name="addNote"></exclude>
-      			<include name="editNote"></include>
-      			<include name="deleteNote"></include>
-      		</methods>
-      	</class>-->
+      
       	
     </classes>
   </test> <!-- Test -->

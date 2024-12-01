@@ -14,31 +14,26 @@ public class QALegendItemPageTest extends Base {
 	public WebDriver driver;
 	
 	@Test
-	public void addItem() throws InterruptedException {
-		// pass email and pswd stored in ppty file
-		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  		 		
-		homepage.clickOnDashboardItemsBtn();              // clk menu option - Items
-		itemspage.clickOnAddItemsBtn();                   // clk Add item btn
+	public void addItem()  {		
+		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));   // pass email and pswd stored in ppty file		 		
+		homepage.clickOnDashboardItemsBtn();                                                              // clk menu option - Items
+		itemspage.clickOnAddItemsBtn();                                                                   // clk Add item btn
 		String item_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
-				properties.getProperty("item_description"), properties.getProperty("item_rate") + FakeUtility.randomNumberGenerator()); 
-		//pass values to item form to add new item
-		
-		Thread.sleep(4000);
-	
+				properties.getProperty("item_description"), 
+				properties.getProperty("item_rate") + FakeUtility.randomNumberGenerator());   // pass values to item form to add new item				
 		itemspage.searchItem(item_title);
-		Assert.assertEquals(itemspage.getItemTitle(), item_title);                                            //for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
+		Assert.assertEquals(itemspage.getItemTitle(), item_title);                            // for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
 	}
 	
 	@Test
-	public void editItem() throws InterruptedException {
+	public void editItem() {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  		 		
 		homepage.clickOnDashboardItemsBtn();              
 		itemspage.clickOnEditItemiIcon();
 		itemspage.clearItemTitlefield();
-		String item_title = itemspage.editItem(properties.getProperty("edit_itemtitle") + FakeUtility.randomNumberGenerator()); 		
-		Thread.sleep(4000);	
+		String item_title = itemspage.editItem(properties.getProperty("edit_itemtitle") + FakeUtility.randomNumberGenerator()); 			
 		itemspage.searchItem(item_title);
-		Assert.assertEquals(itemspage.getItemTitle(), item_title);                                            //for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
+		Assert.assertEquals(itemspage.getItemTitle(), item_title);                                           
 	}
 	
 	@Test

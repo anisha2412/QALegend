@@ -24,10 +24,10 @@ import PageClasses.QALegendProjectsPage;
 public class Base {
 	
 	public WebDriver driver;
-	public Properties properties;  // object for handling pptys file
-	public FileInputStream fis;   // for handling file opertions in ppty file
+	public Properties properties;                 // object for handling pptys file
+	public FileInputStream fis;                   // for handling file opertions in ppty file
 	
-	QALegendLoginPage loginpage;       //obj of login page
+	QALegendLoginPage loginpage;                  // obj of each page's
 	QALegendHomePage homepage;
 	QALegendItemPage itemspage;
 	QALegendEventPage eventpage;
@@ -59,7 +59,7 @@ public class Base {
 		driver.manage().window().maximize();                                  // window maximise  
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));    // implict wait
  	
-		loginpage = new QALegendLoginPage(driver);  // login page obj initalizatn | always initalize last other wise nullPointerExp error occur
+		loginpage = new QALegendLoginPage(driver);                            // page obj initalizatn | always initalize last other wise nullPointerExp error occur
 		homepage = new QALegendHomePage(driver);
 		itemspage = new QALegendItemPage(driver);
 		eventpage = new QALegendEventPage(driver);
@@ -69,8 +69,8 @@ public class Base {
 		
 	}
 	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
+//	@AfterMethod
+//	public void tearDown() {
+//		driver.quit();
+//	}
 }
