@@ -1,6 +1,9 @@
 package TestScripts;
 
 
+import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -11,7 +14,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import Utilities.ExtentReportNG;
 
-public class Listeners implements ITestListener {
+public class Listeners extends Base implements ITestListener {
 	
 	ExtentTest test;
 	ExtentReports extent = ExtentReportNG.getReportObject();             // calling method from ExtentReportNG cls	
@@ -40,7 +43,19 @@ public class Listeners implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		ITestListener.super.onTestFailure(result);
 		extenttest.get().fail(result.getThrowable());                    // get failure result from console
+		String testmethodname = result.getMethod().getMethodName();
+		try { // fetching driver 
+			 driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+			e.printStackTrace();
+		}
+		try {
+			extenttest.get().addScreenCaptureFromPath(getScreenshotPath(testmethodname), result.getMethod().getMethodName());// ss method calling	
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		extenttest.get().log(com.aventstack.extentreports.Status.FAIL, "Testcase Failed");
+		
 	}
 
 	@Override

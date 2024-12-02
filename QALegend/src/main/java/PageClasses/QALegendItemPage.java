@@ -32,16 +32,19 @@ public class QALegendItemPage {
 	WebElement item_searchbox;
 	
 	@FindBy(xpath = "//td[@class=' w20p']")
-	WebElement table_itemtitle;                              //  searched item title in table to fetch text value for assertion
+	WebElement table_itemtitle;                                             //  searched item title in table to fetch text value for assertion
 		
 	@FindBy(xpath = "//a[@title='Edit item' and contains(@class, 'edit')]")
 	WebElement item_editicon;  
 	
 	@FindBy(xpath = "//a[@title='Delete' and contains(@class, 'delete')]")
-	WebElement item_deleteicon;                              // delete icon
+	WebElement item_deleteicon;                                             // delete icon
 	
 	@FindBy(xpath = "//div[@id='ajaxModal' and @style='display: none;']") 
 	WebElement modal_display_none;
+	
+	@FindBy(xpath = "//td[@class='dataTables_empty']") 
+	WebElement empty_table;
 			
 	public QALegendItemPage(WebDriver driver) {
 		this.driver= driver;
@@ -88,6 +91,10 @@ public class QALegendItemPage {
 	
 	public void clickOnDeleteItemiIcon() {
 		pageutilities.clickOnElement(item_deleteicon);
+	}
+	
+	public boolean getDeletedItem() {
+		return empty_table.isDisplayed();	
 	}
 
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-01T18:45:14 IST" name="Suite" finished-at="2024-12-01T18:45:22 IST" duration-ms="7115">
+  <suite started-at="2024-12-02T17:29:29 IST" name="Suite" finished-at="2024-12-02T17:29:52 IST" duration-ms="22821">
     <groups>
     </groups>
-    <test started-at="2024-12-01T18:45:14 IST" name="Test" finished-at="2024-12-01T18:45:22 IST" duration-ms="7115">
+    <test started-at="2024-12-02T17:29:29 IST" name="Test" finished-at="2024-12-02T17:29:52 IST" duration-ms="22821">
       <class name="TestScripts.QAlegendNotePageTest">
-        <test-method is-config="true" signature="browserinitailzation(java.lang.String)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-01T18:45:14 IST" name="browserinitailzation" finished-at="2024-12-01T18:45:19 IST" duration-ms="4365" status="PASS">
+        <test-method is-config="true" signature="browserinitailzation(java.lang.String)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-02T17:29:29 IST" name="browserinitailzation" finished-at="2024-12-02T17:29:33 IST" duration-ms="3778" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,10 +18,60 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserinitailzation -->
-        <test-method signature="deleteNote()[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-01T18:45:19 IST" name="deleteNote" finished-at="2024-12-01T18:45:21 IST" duration-ms="2664" status="PASS">
+        <test-method signature="addNote()[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-02T17:29:33 IST" name="addNote" finished-at="2024-12-02T17:29:52 IST" duration-ms="18966" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (104fbca4294a72d7038cf4836c9bdef4)] -> xpath: //div[@class='preview']//following::img[contains(@class,'upload-thumbnail-sm')]] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\ANISHA\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60179}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60179/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 104fbca4294a72d7038cf4836c9bdef4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of [[ChromeDriver: chrome on windows (104fbca4294a72d7038cf4836c9bdef4)] -> xpath: //div[@class='preview']//following::img[contains(@class,'upload-thumbnail-sm')]] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.86, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\ANISHA\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60179}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60179/devtoo..., se:cdpVersion: 131.0.6778.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 104fbca4294a72d7038cf4836c9bdef4
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at Utilities.WaitUtility.waitForVisiblityOfAnElement(WaitUtility.java:38)
+at PageClasses.QALegendNotePage.addNote(QALegendNotePage.java:80)
+at TestScripts.QAlegendNotePageTest.addNote(QAlegendNotePageTest.java:19)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deleteNote -->
+        </test-method> <!-- addNote -->
       </class> <!-- TestScripts.QAlegendNotePageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

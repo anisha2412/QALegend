@@ -40,6 +40,14 @@ public class QALegendItemPageTest extends Base {
 	public void deleteItem() {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 		homepage.clickOnDashboardItemsBtn(); 
+		itemspage.clickOnAddItemsBtn();                                                                   
+		String item_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
+				properties.getProperty("item_description"), 
+				properties.getProperty("item_rate") + FakeUtility.randomNumberGenerator());  		
+		itemspage.searchItem(item_title);
 		itemspage.clickOnDeleteItemiIcon();
+		
+		//itemspage.searchDeletedItem(item_title);
+		Assert.assertEquals(itemspage.getDeletedItem(), true);  
 	}
 }

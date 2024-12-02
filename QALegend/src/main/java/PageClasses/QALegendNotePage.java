@@ -1,15 +1,10 @@
 package PageClasses;
 
-
 import java.awt.AWTException;
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Utilities.FileUploadUtility;
 import Utilities.PageUtilities;
 import Utilities.WaitUtility;
@@ -54,12 +49,12 @@ public class QALegendNotePage {
 	
 	@FindBy(xpath = "//div[@id='ajaxModal' and @style='display: none;']") 
 	WebElement modal_display_none;
+		
+	@FindBy(xpath = "//td[@class='dataTables_empty']") 
+	WebElement empty_table;
 	
-	@FindBy(xpath = "(//div[@class='ps__thumb-y'])[7]")
-	WebElement modal_scrollbar;   
-	
-	
-			 
+	@FindBy(xpath = "(//div[@class='col-md-12'])[1]")
+	WebElement modal;   
 		
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
@@ -70,12 +65,20 @@ public class QALegendNotePage {
 
 	public String addNote(String title) throws AWTException  {
 	    pageutilities.enterTextOnWebElement(note_titlefield, title);        
+	       
 	    pageutilities.clickOnElement(note_label);
 	    pageutilities.enterKeyPress();
-	    pageutilities.clickOnElement(note_uploadfilebtn);
+	    	    
+	    pageutilities.clickOnElement(note_uploadfilebtn);	    
 	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  
-	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview);  
-//	    pageutilities.hoverOverElement(modal_scrollbar);
+	    
+	    
+	    pageutilities.hoverOverElement(modal);
+	    pageutilities.scrollPage();
+	    //pageutilities.downArrowKeyPress();
+	    
+	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 
+	    
 	    pageutilities.clickOnElement(note_savbtn);	    
 	    return title;        
 	}
@@ -118,15 +121,13 @@ public class QALegendNotePage {
 		pageutilities.clickOnElement(note_deleteicon);
 	}
 	
-	public void deleteNote() {
+	public void deleteNoteConfirmation() {
 		pageutilities.clickOnElement(note_deleteconfirmationbtn);
 	}
 		
-//	public int getDeletedID() {
-//	    String title_id = note_deleteconfirmationbtn.getAttribute("data-id");
-//	    System.out.println(title_id);
-//	    return Integer.parseInt(title_id); // Convert to int
-//	}
+	public boolean getDeletedNote() {
+		return empty_table.isDisplayed();	
+	}
 	
 	
 

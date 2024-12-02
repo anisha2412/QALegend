@@ -1,9 +1,18 @@
 package PageClasses;
 
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import Utilities.PageUtilities;
 
 
@@ -41,6 +50,11 @@ public class QALegendEventPage {
 		
 	@FindBy(xpath = "//a[@title='Edit event' and contains(@class, 'btn btn-default')]")
 	WebElement event_editbtn;
+	
+	@FindBy(xpath = "//span[@class='fc-title']")
+    List<WebElement> events;
+	
+	
 	
 	public QALegendEventPage(WebDriver driver) {
 		this.driver=driver;
@@ -86,6 +100,26 @@ public class QALegendEventPage {
 		return title;
 	}
 	
+
+
+//	public void printAllEventTitles() {
+//        for (WebElement event : events) {
+//            System.out.println(event.getText());  // Print each event title
+//        }           
+//    }
+
+	
+//	public void printEventTitles() {
+//	    List<WebElement> events = driver.findElements(By.xpath("//span[@class='fc-title']"));
+//	    
+//	    for (int i = 0; i < events.size(); i++) {
+//	        WebElement event = driver.findElements(By.xpath("//span[@class='fc-title']")).get(i); // Re-locate the element
+//	        System.out.println(event.getText());
+//	    }
+//	}
+
+
+
 
 
 }

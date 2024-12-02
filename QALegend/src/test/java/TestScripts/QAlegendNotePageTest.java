@@ -1,17 +1,11 @@
 package TestScripts;
 
-import static org.testng.Assert.assertTrue;
-
 import java.awt.AWTException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import Utilities.FakeUtility;
-import Utilities.FileUploadUtility;
-import Utilities.PageUtilities;
-import Utilities.WaitUtility;
+
 
 public class QAlegendNotePageTest extends Base {
 	public WebDriver driver;
@@ -41,15 +35,19 @@ public class QAlegendNotePageTest extends Base {
 	}
 	
 	@Test
-	public void deleteNote() {
+	public void deleteNote() throws AWTException {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 		homepage.clickOnDashboardNotesBtn(); 
+		
+		notepage.clickOnAddNotebtn();
+		String noteTitle = notepage.addNote(properties.getProperty("note_title") + FakeUtility.randomNumberGenerator());  
+		notepage.searchNote(noteTitle); 
+				
 		notepage.clickOnDeleteNoteiIcon();
-		notepage.deleteNote();
+		notepage.deleteNoteConfirmation();
+		Assert.assertEquals(notepage.getDeletedNote(), true);  
 		
-		//int note_id = notepage.getDeletedID();
-		
-		//String deleted_notetitle = notepage.getDeletedNoteTitle(note_id);
+	
 	}
 	
 	

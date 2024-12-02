@@ -9,19 +9,21 @@
 	<parameter name="browser" value="Chrome"></parameter>
   	<test thread-count="5" name="Test">
    	<classes>
+   	C:\Users\ANISHA\Downloads\selenium.jpg
+   	
       	
      	<!--<class name="TestScripts.QALegendEventPageTest">
 	      	<methods>
-	      		<exclude name="addEvent"></exclude>
-	      		<include name="editEvent"></include>
+	      		<include name="addEvent"></include>
+	      		<exclude name="editEvent"></exclude>
 	      	</methods>
       	</class>-->
-      	
-      	<class name="TestScripts.QAlegendNotePageTest">
+      
+    	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
-      			<exclude name="addNote"></exclude>
+      			<include name="addNote"></include>
       			<exclude name="editNote"></exclude>
-      			<include name="deleteNote"></include>
+      			<exclude name="deleteNote"></exclude>
       		</methods>
       	</class>
       	
@@ -38,7 +40,7 @@
       		</methods>
       	</class>-->
       	
-    <!-- <class name="TestScripts.QALegendItemPageTest">
+    <!--	<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<exclude name="addItem"></exclude>
       			<exclude name="editItem"></exclude>

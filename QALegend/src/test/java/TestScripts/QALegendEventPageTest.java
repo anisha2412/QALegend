@@ -14,13 +14,20 @@ public WebDriver driver;
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 		homepage.clickOnDashboardEventsBtn();  
 		eventpage.clickOnAddEventBtn();
+
 		String title_event = eventpage.addEvent(properties.getProperty("event_title") + FakeUtility.randomNumberGenerator(),
 				properties.getProperty("event_description") + FakeUtility.randomNumberGenerator(),
 				properties.getProperty("event_startdate"),
 				properties.getProperty("event_endate"));
 		
-		System.out.println(title_event);
-//		Assert.assertEquals(eventpage.getEventTitle(), title_event);  
+		
+//		eventpage.printAllEventTitles();
+		
+		//System.out.println(new_event);
+//		System.out.println("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"+title_event);
+		//Assert.assertEquals(false, null);
+	
+	
 	}
 	
 	

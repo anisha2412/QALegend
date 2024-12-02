@@ -1,9 +1,13 @@
 package TestScripts;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -11,6 +15,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+
+import com.google.common.io.Files;
 
 import Constants.Constants;
 import PageClasses.QALegendClientsPage;
@@ -67,6 +73,17 @@ public class Base {
 		projectpage = new QALegendProjectsPage(driver);
 		notepage = new QALegendNotePage(driver);
 		
+	}
+	
+	
+	//scrnsht method
+	
+	public String getScreenshotPath(String testcasename) throws IOException {
+		TakesScreenshot ts = (TakesScreenshot) driver;        // webdriver converion to take ss
+		File source = ts.getScreenshotAs(OutputType.FILE);    // ss type file
+		String destinationfile = System.getProperty("user.dir") +"\\test-output\\" + testcasename+".png";   // storing fldr destintn with extntn
+		Files.copy(source, new File(destinationfile));      // cpy file from source to destintn
+		return destinationfile;
 	}
 	
 //	@AfterMethod

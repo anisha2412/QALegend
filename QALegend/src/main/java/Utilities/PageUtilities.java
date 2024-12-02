@@ -52,13 +52,14 @@ public class PageUtilities {
 	}	
 	public void scrollPage() {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(0,250)");
+	    js.executeScript("window.scrollBy(0,500)");
 	}
 	
 	
 	public void scrollElement(WebElement element) {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", element);
+	   // js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", element);
+	    js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 
@@ -81,7 +82,12 @@ public class PageUtilities {
 	public void enterKeyPress() {
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.ENTER).build().perform();
-	}	
+	}
+	
+	public void downArrowKeyPress() {
+		Actions action = new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+	}
 		
 	public boolean isElementEnabled(WebElement element) {
 		return(element.isEnabled());			
