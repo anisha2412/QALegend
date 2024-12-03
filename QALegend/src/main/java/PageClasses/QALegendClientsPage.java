@@ -55,8 +55,8 @@ public class QALegendClientsPage {
 		pageutilities.enterTextOnWebElement(client_cityfield, city);
 		pageutilities.enterTextOnWebElement(client_countryfield, country);
 		
-		pageutilities.hoverOverElement(clientmodel_companynamelabel);        // hover compnyname label and scrl modal
-		pageutilities.scrollPage();
+//		pageutilities.hoverOverElement(clientmodel_companynamelabel);        // hover compnyname label and scrl modal
+		pageutilities.scrollElement(client_websitefield);
 		pageutilities.enterTextOnWebElement(client_websitefield, website);
 		
 		pageutilities.clickOnElement(client_savebtn);

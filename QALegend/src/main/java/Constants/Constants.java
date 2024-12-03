@@ -7,6 +7,6 @@ public class Constants {
 	public static final String CONFIGFILE = System.getProperty("user.dir") + "\\src\\main\\resources\\Config.properties"; 
 	// ppty file path | Create inside src/main/resourse |
 	
-	public static final int EXPLICITWAIT = 15;  //     explicit wait constants
+	public static final int EXPLICITWAIT = 10;  //     explicit wait constants
 
 }

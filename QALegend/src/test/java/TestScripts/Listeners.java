@@ -43,17 +43,19 @@ public class Listeners extends Base implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		ITestListener.super.onTestFailure(result);
 		extenttest.get().fail(result.getThrowable());                    // get failure result from console
-		String testmethodname = result.getMethod().getMethodName();
-		try { // fetching driver 
-			 driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
-		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-			e.printStackTrace();
-		}
-		try {
-			extenttest.get().addScreenCaptureFromPath(getScreenshotPath(testmethodname), result.getMethod().getMethodName());// ss method calling	
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		
+//		String testmethodname = result.getMethod().getMethodName();
+//		try { // fetching driver 
+//			 driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
+//		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
+//			e.printStackTrace();
+//		}
+//		try {
+//			extenttest.get().addScreenCaptureFromPath(getScreenshotPath(testmethodname), result.getMethod().getMethodName());// ss method calling	
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+		
 		extenttest.get().log(com.aventstack.extentreports.Status.FAIL, "Testcase Failed");
 		
 	}

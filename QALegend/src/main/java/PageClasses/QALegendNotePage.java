@@ -53,32 +53,21 @@ public class QALegendNotePage {
 	@FindBy(xpath = "//td[@class='dataTables_empty']") 
 	WebElement empty_table;
 	
-	@FindBy(xpath = "(//div[@class='col-md-12'])[1]")
-	WebElement modal;   
-		
+	
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
 		this.pageutilities = new PageUtilities(driver);
 		PageFactory.initElements(driver, this);
 	}
 		
-
 	public String addNote(String title) throws AWTException  {
-	    pageutilities.enterTextOnWebElement(note_titlefield, title);        
-	       
+	    pageutilities.enterTextOnWebElement(note_titlefield, title);        	       
 	    pageutilities.clickOnElement(note_label);
-	    pageutilities.enterKeyPress();
-	    	    
+	    pageutilities.enterKeyPress();	    	    
 	    pageutilities.clickOnElement(note_uploadfilebtn);	    
-	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  
-	    
-	    
-	    pageutilities.hoverOverElement(modal);
-	    pageutilities.scrollPage();
-	    //pageutilities.downArrowKeyPress();
-	    
-	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 
-	    
+	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  	    	   
+	    pageutilities.scrollElement(file_preview);	    
+	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 	    
 	    pageutilities.clickOnElement(note_savbtn);	    
 	    return title;        
 	}
@@ -98,7 +87,7 @@ public class QALegendNotePage {
 	}
 	
 	public String getNoteFilePath() {
-		String filePath = "C:\\Users\\ANISHA\\Downloads\\selenium.jpg";
+		String filePath = "C:\\Users\\ANISHA\\git\\QALegend\\QALegend\\src\\main\\resources\\uploads\\selenium.jpg";
 		return filePath;
 	}
 	
@@ -129,12 +118,4 @@ public class QALegendNotePage {
 		return empty_table.isDisplayed();	
 	}
 	
-	
-
-
-	
-	
-	
-
-
 }

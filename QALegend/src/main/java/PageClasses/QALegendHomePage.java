@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Utilities.PageUtilities;
 
 public class QALegendHomePage {
@@ -30,7 +29,10 @@ public class QALegendHomePage {
 	@FindBy(xpath = "//span[text()='Items']")
 	WebElement dashboard_itemsbtn;
 	
-		
+	@FindBy(xpath = "//span[text()='Announcements']")
+	WebElement dashboard_announcementbtn;
+	
+			
 	public QALegendHomePage(WebDriver driver) {
 		this.driver=driver;
 		this.pageutilities = new PageUtilities(driver);           // PageUtilities object initailizatn
@@ -60,4 +62,13 @@ public class QALegendHomePage {
 	public void clickOnDashboardItemsBtn() {
 		dashboard_itemsbtn.click();                               // drct clk without using pageutility | clk items btn in homepage
 	}
+	
+	public void clickOnDashboardAnnouncementBtn() {
+		dashboard_announcementbtn.click();                               
+	}
+	
+	public void scrollSideBar() {
+		 pageutilities.scrollElement(dashboard_announcementbtn);
+	}
+		
 }

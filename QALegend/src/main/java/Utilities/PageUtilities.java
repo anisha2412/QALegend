@@ -57,9 +57,16 @@ public class PageUtilities {
 	
 	
 	public void scrollElement(WebElement element) {
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	   // js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", element);
-	    js.executeScript("arguments[0].scrollIntoView(true);", element);
+//	    JavascriptExecutor js = (JavascriptExecutor) driver;
+//	   // js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", element);
+//	    js.executeScript("arguments[0].scrollIntoView(true);", element);
+	    
+
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight;", element);
+        
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
 

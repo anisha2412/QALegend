@@ -46,8 +46,6 @@ public class QALegendItemPageTest extends Base {
 				properties.getProperty("item_rate") + FakeUtility.randomNumberGenerator());  		
 		itemspage.searchItem(item_title);
 		itemspage.clickOnDeleteItemiIcon();
-		
-		//itemspage.searchDeletedItem(item_title);
 		Assert.assertEquals(itemspage.getDeletedItem(), true);  
 	}
 }

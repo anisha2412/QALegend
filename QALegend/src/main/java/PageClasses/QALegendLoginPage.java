@@ -20,6 +20,10 @@ public class QALegendLoginPage {
 	
 	@FindBy(xpath = "//button[@class='btn btn-lg btn-primary btn-block mt15']")
 	WebElement signinbtn;
+	
+	@FindBy(xpath = "//span[@class='glyphicon glyphicon-exclamation-sign']//following::span")
+	WebElement authentication_msg;
+	
 		
 	public QALegendLoginPage(WebDriver driver) {	      // const. made by default when loginpage object initalized	
 		this.driver= driver;				
@@ -32,4 +36,15 @@ public class QALegendLoginPage {
 		pageutilities.enterTextOnWebElement(passwordfield, password);
 		pageutilities.clickOnElement(signinbtn);                            // click on signin btn			
 	}
+	
+	public void loginWithInvalidCredentials(String email, String password) {				
+		pageutilities.enterTextOnWebElement(emailfield, email);  
+		pageutilities.enterTextOnWebElement(passwordfield, password);
+		pageutilities.clickOnElement(signinbtn);                          		
+	}
+	
+	public boolean checkAuthentication() {
+		return authentication_msg.isDisplayed();	
+	}
+	
 }

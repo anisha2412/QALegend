@@ -19,6 +19,7 @@ import org.testng.annotations.Parameters;
 import com.google.common.io.Files;
 
 import Constants.Constants;
+import PageClasses.QALegendAnnouncementPage;
 import PageClasses.QALegendClientsPage;
 import PageClasses.QALegendEventPage;
 import PageClasses.QALegendHomePage;
@@ -33,13 +34,14 @@ public class Base {
 	public Properties properties;                 // object for handling pptys file
 	public FileInputStream fis;                   // for handling file opertions in ppty file
 	
-	QALegendLoginPage loginpage;                  // obj of each page's
+	QALegendLoginPage loginpage;                  // obj of each pages
 	QALegendHomePage homepage;
 	QALegendItemPage itemspage;
 	QALegendEventPage eventpage;
 	QALegendClientsPage clientpage;
 	QALegendProjectsPage  projectpage;
 	QALegendNotePage notepage;
+	QALegendAnnouncementPage  announcementPage;
 	
 	@BeforeMethod(alwaysRun = true)                       // to always run this method before testcases
 	@Parameters({"browser"})
@@ -72,19 +74,20 @@ public class Base {
 		clientpage = new QALegendClientsPage(driver);
 		projectpage = new QALegendProjectsPage(driver);
 		notepage = new QALegendNotePage(driver);
+		announcementPage = new QALegendAnnouncementPage(driver);
 		
 	}
 	
 	
 	//scrnsht method
 	
-	public String getScreenshotPath(String testcasename) throws IOException {
-		TakesScreenshot ts = (TakesScreenshot) driver;        // webdriver converion to take ss
-		File source = ts.getScreenshotAs(OutputType.FILE);    // ss type file
-		String destinationfile = System.getProperty("user.dir") +"\\test-output\\" + testcasename+".png";   // storing fldr destintn with extntn
-		Files.copy(source, new File(destinationfile));      // cpy file from source to destintn
-		return destinationfile;
-	}
+//	public String getScreenshotPath(String testcasename) throws IOException {
+//		TakesScreenshot ts = (TakesScreenshot) driver;        // webdriver converion to take ss
+//		File source = ts.getScreenshotAs(OutputType.FILE);    // ss type file
+//		String destinationfile = System.getProperty("user.dir") +"\\test-output\\" + testcasename+".png";   // storing fldr destintn with extntn
+//		Files.copy(source, new File(destinationfile));      // cpy file from source to destintn
+//		return destinationfile;
+//	}
 	
 //	@AfterMethod
 //	public void tearDown() {
