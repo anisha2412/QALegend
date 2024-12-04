@@ -35,8 +35,11 @@ public class QALegendNotePage {
 	@FindBy(xpath = "(//a[@class='edit'])[1]")
 	WebElement note_notetitle;                                                  // for searching 
 	
-	@FindBy(xpath = "//a[@title='Edit note' and contains(@class, 'edit')]")
+	@FindBy(xpath = "(//a[@class='edit'])[2]")
 	WebElement note_editicon;                                                   // edit icon
+	
+	
+	
 	
 	@FindBy(xpath = "//a[@title='Delete note' and contains(@class, 'delete')]")
 	WebElement note_deleteicon;                                                 // delete icon
@@ -100,6 +103,10 @@ public class QALegendNotePage {
 		pageutilities.enterTextOnWebElement(note_titlefield, title);							
 		pageutilities.clickOnElement(note_savbtn);
 		return title;		
+	}
+	
+	public void clearSearchBox() {
+		note_searchbox.clear();
 	}
 	
 	public void clearNoteTitlefield() {

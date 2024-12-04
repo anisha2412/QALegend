@@ -78,6 +78,10 @@ public class QALegendItemPage {
 		pageutilities.clickOnElement(item_editicon);
 	}
 	
+	public void clearSearchBox() {
+		item_searchbox.clear();
+	}
+	
 	public void clearItemTitlefield() {
 		titlefield.clear();
 	}

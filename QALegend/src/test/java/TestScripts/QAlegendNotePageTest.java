@@ -21,14 +21,18 @@ public class QAlegendNotePageTest extends Base {
 	}
 	
 	@Test
-	public void editNote()  {
+	public void editNote() throws AWTException  {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
-		homepage.clickOnDashboardNotesBtn(); 
+		homepage.clickOnDashboardNotesBtn();
+		notepage.clickOnAddNotebtn();
+		String addednotetitle = notepage.addNote(properties.getProperty("note_title") + FakeUtility.randomNumberGenerator()); 
+		notepage.searchNote(addednotetitle);
 		notepage.clickOnEditNoteiIcon();
 		notepage.clearNoteTitlefield();
-		String notetitle = notepage.editNote(properties.getProperty("edit_notetitle") + FakeUtility.randomNumberGenerator()); 
-		notepage.searchNote(notetitle);
-		Assert.assertEquals(notepage.getNoteTitle(), notetitle); 
+		String editednotetitle = notepage.editNote(properties.getProperty("edit_notetitle") + FakeUtility.randomNumberGenerator()); 
+		notepage.clearSearchBox();
+		notepage.searchNote(editednotetitle);
+		Assert.assertEquals(notepage.getNoteTitle(), editednotetitle); 
 	}
 	
 	@Test

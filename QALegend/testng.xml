@@ -23,11 +23,11 @@
 	      	</methods>
       	</class>-->
       
-    	<!--<class name="TestScripts.QAlegendNotePageTest">
+    <!--	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<exclude name="addNote"></exclude>
-      			<exclude name="editNote"></exclude>
-      			<include name="deleteNote"></include>
+      			<include name="editNote"></include>
+      			<exclude name="deleteNote"></exclude>
       		</methods>
       	</class>-->
       	
@@ -37,26 +37,26 @@
 	      	</methods>
       	</class>-->
       	     	
-   <class name="TestScripts.QALegendProjectsPageTest">
+   	<!--	<class name="TestScripts.QALegendProjectsPageTest">
       		<methods>     			
       			<include name="addProject"></include>
       		</methods>
-      	</class>
+      	</class>-->
       	
-    <!--	<class name="TestScripts.QALegendItemPageTest">
+   		<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<exclude name="addItem"></exclude>
-      			<exclude name="editItem"></exclude>
-      			<include name="deleteItem"></include>
+      			<include name="editItem"></include>
+      			<exclude name="deleteItem"></exclude>
       		</methods>
-      	</class>-->
+      	</class>
       	
       	<!--<class name="TestScripts.QALegendAnnouncementPageTest">
 	      	<methods>
 	      		<include name="addAnnouncement"></include>
 	      	</methods>
       	</class>-->
-      	     	
+      	     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

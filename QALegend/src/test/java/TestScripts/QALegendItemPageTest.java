@@ -20,7 +20,7 @@ public class QALegendItemPageTest extends Base {
 		itemspage.clickOnAddItemsBtn();                                                                   // clk Add item btn
 		String item_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
 				properties.getProperty("item_description"), 
-				properties.getProperty("item_rate") + FakeUtility.randomNumberGenerator());   // pass values to item form to add new item				
+				properties.getProperty("item_rate"));   // pass values to item form to add new item				
 		itemspage.searchItem(item_title);
 		Assert.assertEquals(itemspage.getItemTitle(), item_title);                            // for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
 	}
@@ -28,12 +28,19 @@ public class QALegendItemPageTest extends Base {
 	@Test
 	public void editItem() {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  		 		
-		homepage.clickOnDashboardItemsBtn();              
+		homepage.clickOnDashboardItemsBtn();  
+		
+		itemspage.clickOnAddItemsBtn();                                                                   // clk Add item btn
+		String addeditem_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
+				properties.getProperty("item_description"), 
+				properties.getProperty("item_rate"));   // pass values to item form to add new item				
+		itemspage.searchItem(addeditem_title);				
 		itemspage.clickOnEditItemiIcon();
 		itemspage.clearItemTitlefield();
-		String item_title = itemspage.editItem(properties.getProperty("edit_itemtitle") + FakeUtility.randomNumberGenerator()); 			
-		itemspage.searchItem(item_title);
-		Assert.assertEquals(itemspage.getItemTitle(), item_title);                                           
+		String editeditem_title = itemspage.editItem(properties.getProperty("edit_itemtitle") + FakeUtility.randomNumberGenerator()); 			
+	    itemspage.clearSearchBox();
+		itemspage.searchItem(editeditem_title);
+		Assert.assertEquals(itemspage.getItemTitle(), editeditem_title);                                           
 	}
 	
 	@Test
@@ -43,7 +50,7 @@ public class QALegendItemPageTest extends Base {
 		itemspage.clickOnAddItemsBtn();                                                                   
 		String item_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
 				properties.getProperty("item_description"), 
-				properties.getProperty("item_rate") + FakeUtility.randomNumberGenerator());  		
+				properties.getProperty("item_rate"));  		
 		itemspage.searchItem(item_title);
 		itemspage.clickOnDeleteItemiIcon();
 		Assert.assertEquals(itemspage.getDeletedItem(), true);  

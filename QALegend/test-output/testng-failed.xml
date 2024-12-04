@@ -7,12 +7,12 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestScripts.QALegendProjectsPageTest">
+      <class name="TestScripts.QALegendItemPageTest">
         <methods>
           <include name="browserinitailzation"/>
-          <include name="addProject"/>
+          <include name="editItem"/>
         </methods>
-      </class> <!-- TestScripts.QALegendProjectsPageTest -->
+      </class> <!-- TestScripts.QALegendItemPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
