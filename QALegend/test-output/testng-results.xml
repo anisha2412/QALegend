@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-04T13:30:07 IST" name="Suite" finished-at="2024-12-04T13:30:18 IST" duration-ms="10954">
+  <suite started-at="2024-12-05T10:21:16 IST" name="Suite" finished-at="2024-12-05T10:21:30 IST" duration-ms="13367">
     <groups>
     </groups>
-    <test started-at="2024-12-04T13:30:07 IST" name="Test" finished-at="2024-12-04T13:30:18 IST" duration-ms="10954">
-      <class name="TestScripts.QALegendItemPageTest">
-        <test-method is-config="true" signature="browserinitailzation(java.lang.String)[pri:0, instance:TestScripts.QALegendItemPageTest@4eaf3684]" started-at="2024-12-04T13:30:07 IST" name="browserinitailzation" finished-at="2024-12-04T13:30:11 IST" duration-ms="3969" status="PASS">
+    <test started-at="2024-12-05T10:21:16 IST" name="Test" finished-at="2024-12-05T10:21:30 IST" duration-ms="13367">
+      <class name="TestScripts.QAlegendNotePageTest">
+        <test-method is-config="true" signature="browserinitailzation(java.lang.String)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-05T10:21:17 IST" name="browserinitailzation" finished-at="2024-12-05T10:21:21 IST" duration-ms="4344" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserinitailzation -->
-        <test-method signature="editItem()[pri:0, instance:TestScripts.QALegendItemPageTest@4eaf3684]" started-at="2024-12-04T13:30:11 IST" name="editItem" finished-at="2024-12-04T13:30:18 IST" duration-ms="6903" status="PASS">
+        <test-method signature="editNote()[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-05T10:21:21 IST" name="editNote" finished-at="2024-12-05T10:21:30 IST" duration-ms="8936" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- editItem -->
-      </class> <!-- TestScripts.QALegendItemPageTest -->
+        </test-method> <!-- editNote -->
+      </class> <!-- TestScripts.QAlegendNotePageTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

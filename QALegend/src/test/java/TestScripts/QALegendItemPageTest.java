@@ -28,8 +28,7 @@ public class QALegendItemPageTest extends Base {
 	@Test
 	public void editItem() {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  		 		
-		homepage.clickOnDashboardItemsBtn();  
-		
+		homepage.clickOnDashboardItemsBtn();  		
 		itemspage.clickOnAddItemsBtn();                                                                   // clk Add item btn
 		String addeditem_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
 				properties.getProperty("item_description"), 

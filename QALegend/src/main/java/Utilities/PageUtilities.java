@@ -56,15 +56,7 @@ public class PageUtilities {
 	}
 	
 	
-	public void scrollElement(WebElement element) {
-//	    JavascriptExecutor js = (JavascriptExecutor) driver;
-//	   // js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight", element);
-//	    js.executeScript("arguments[0].scrollIntoView(true);", element);
-	    
-
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        js.executeScript("arguments[0].scrollTop = arguments[0].scrollHeight;", element);
-        
+	public void scrollElement(WebElement element) {        
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
@@ -139,5 +131,10 @@ public class PageUtilities {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("arguments[0].click();", element);
 	}
+	
+	public void clearTextbox(WebElement element) {
+	    element.clear();
+	}
+
 
 }

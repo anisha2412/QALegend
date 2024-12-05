@@ -79,7 +79,9 @@ public class QALegendItemPage {
 	}
 	
 	public void clearSearchBox() {
+		WaitUtility.waitForVisiblityOfAnElement(driver, item_searchbox);
 		item_searchbox.clear();
+		//pageutilities.clearTextbox(item_searchbox);
 	}
 	
 	public void clearItemTitlefield() {

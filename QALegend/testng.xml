@@ -23,13 +23,13 @@
 	      	</methods>
       	</class>-->
       
-    <!--	<class name="TestScripts.QAlegendNotePageTest">
+    	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<exclude name="addNote"></exclude>
       			<include name="editNote"></include>
       			<exclude name="deleteNote"></exclude>
       		</methods>
-      	</class>-->
+      	</class>
       	
     	<!--<class name="TestScripts.QALegendClientPageTest">
 	      	<methods>
@@ -43,13 +43,13 @@
       		</methods>
       	</class>-->
       	
-   		<class name="TestScripts.QALegendItemPageTest">
+  		<!--<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<exclude name="addItem"></exclude>
       			<include name="editItem"></include>
       			<exclude name="deleteItem"></exclude>
       		</methods>
-      	</class>
+      	</class>-->
       	
       	<!--<class name="TestScripts.QALegendAnnouncementPageTest">
 	      	<methods>

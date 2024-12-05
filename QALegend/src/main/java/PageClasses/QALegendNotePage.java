@@ -106,6 +106,7 @@ public class QALegendNotePage {
 	}
 	
 	public void clearSearchBox() {
+		WaitUtility.waitForVisiblityOfAnElement(driver, note_searchbox);
 		note_searchbox.clear();
 	}
 	
