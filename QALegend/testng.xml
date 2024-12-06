@@ -15,39 +15,39 @@
   	</groups>
    	<classes>
    
-   		<!--<class name="TestScripts.QALegendLoginPageTest">
+   	<class name="TestScripts.QALegendLoginPageTest">
 	      	<methods>
 	      		<include name="invalidLogin"></include>
 	      	</methods>
-      	</class>-->
+      	</class>
       	    
-    <!--	<class name="TestScripts.QAlegendNotePageTest">
+    	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<include name="addNote"></include>
       			<exclude name="editNote"></exclude>
       			<exclude name="deleteNote"></exclude>
       		</methods>
-      	</class>-->
+      	</class>
       	
-    <!--	<class name="TestScripts.QALegendClientPageTest">
+    	<class name="TestScripts.QALegendClientPageTest">
 	      	<methods>
 	      		<include name="addClient"></include>
 	      	</methods>
-      	</class>-->
+      	</class>
       	     	
-   		<!--<class name="TestScripts.QALegendProjectsPageTest">
+   	<class name="TestScripts.QALegendProjectsPageTest">
       		<methods>     			
       			<include name="addProject"></include>
       		</methods>
-      	</class>-->
+      	</class>
       	
-  		<!--<class name="TestScripts.QALegendItemPageTest">
+  	<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<include name="addItem"></include>
       			<include name="editItem"></include>
       			<include name="deleteItem"></include>
       		</methods>
-      	</class>-->
+      	</class>
       	
       	<class name="TestScripts.QALegendAnnouncementPageTest">
 	      	<methods>
