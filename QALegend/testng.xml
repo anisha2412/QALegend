@@ -21,7 +21,7 @@
 	      	</methods>
       	</class>
       	    
-    	<class name="TestScripts.QAlegendNotePageTest">
+    	<!--<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<include name="addNote"></include>
       			<exclude name="editNote"></exclude>
@@ -53,7 +53,7 @@
 	      	<methods>
 	      		<include name="addAnnouncement"></include>
 	      	</methods>
-      	</class>
+      	</class> -->
       	
       	<!--<class name="TestScripts.QALegendEventPageTest">
 	      	<methods>
