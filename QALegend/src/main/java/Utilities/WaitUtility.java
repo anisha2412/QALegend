@@ -42,18 +42,6 @@ public class WaitUtility {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));  
 		wait.until(ExpectedConditions.alertIsPresent());	
 	}
-	
-//	public void waitForModalToClose(WebDriver driver, WebElement element) {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Constants.EXPLICITWAIT));  
-//		wait.until(ExpectedConditions.invisibilityOf(element));	
-//	}
-	
-	
-	
-	
-	
-	
-	
-	
+			
 	
 }

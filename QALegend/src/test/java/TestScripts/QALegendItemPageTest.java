@@ -13,7 +13,7 @@ public class QALegendItemPageTest extends Base {
 	
 	public WebDriver driver;
 	
-	@Test
+	@Test(priority = 1)
 	public void addItem()  {		
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));   // pass email and pswd stored in ppty file		 		
 		homepage.clickOnDashboardItemsBtn();                                                              // clk menu option - Items
@@ -25,7 +25,7 @@ public class QALegendItemPageTest extends Base {
 		Assert.assertEquals(itemspage.getItemTitle(), item_title);                            // for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void editItem() {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  		 		
 		homepage.clickOnDashboardItemsBtn();  		
@@ -42,7 +42,7 @@ public class QALegendItemPageTest extends Base {
 		Assert.assertEquals(itemspage.getItemTitle(), editeditem_title);                                           
 	}
 	
-	@Test
+	@Test(priority = 3)
 	public void deleteItem() {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 		homepage.clickOnDashboardItemsBtn(); 

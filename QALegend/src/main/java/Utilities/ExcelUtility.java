@@ -18,7 +18,7 @@ public class ExcelUtility {
 	{
 		f = new FileInputStream(System.getProperty("user.dir") + path);     //object of FileInputStream class
 		w = new XSSFWorkbook(f);    	// Open workbook with file path
-		sh = w.getSheet(sheet);    	// Open sheet, default sheet name - sheet1
+		sh = w.getSheet(sheet);    		// Open sheet, default sheet name - sheet1
 		Row r = sh.getRow(a);           // Getting row        
 		Cell c = r.getCell(b);          // Getting cell value inside row
 		return c.getStringCellValue();	// Returning value to main method	
@@ -28,7 +28,7 @@ public class ExcelUtility {
 	{		
 		f = new FileInputStream(System.getProperty("user.dir") + path);     //object of FileInputStream class
 		w = new XSSFWorkbook(f);    				// Open workbook with file path
-		sh = w.getSheet(sheet);    				// Open sheet, default sheet name - sheet1
+		sh = w.getSheet(sheet);    					// Open sheet, default sheet name - sheet1
 		Row r = sh.getRow(a);           			// Getting row        
 		Cell c = r.getCell(b);
 		int x = (int)c.getNumericCellValue();     	// Read integer data's [type casting]

@@ -8,6 +8,11 @@
 
 	<parameter name="browser" value="Chrome"></parameter>
   	<test thread-count="5" name="Test">
+  	<groups>
+  		<run>
+  			<include name = "NotesTest"></include>
+  		</run>
+  	</groups>
    	<classes>
    
    		<!--<class name="TestScripts.QALegendLoginPageTest">
@@ -15,29 +20,22 @@
 	      		<include name="invalidLogin"></include>
 	      	</methods>
       	</class>-->
-      	
-     	<!--<class name="TestScripts.QALegendEventPageTest">
-	      	<methods>
-	      		<include name="addEvent"></include>
-	      		<exclude name="editEvent"></exclude>
-	      	</methods>
-      	</class>-->
-      
-    	<class name="TestScripts.QAlegendNotePageTest">
+      	    
+    <!--	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
-      			<exclude name="addNote"></exclude>
-      			<include name="editNote"></include>
+      			<include name="addNote"></include>
+      			<exclude name="editNote"></exclude>
       			<exclude name="deleteNote"></exclude>
       		</methods>
-      	</class>
+      	</class>-->
       	
-    	<!--<class name="TestScripts.QALegendClientPageTest">
+    <!--	<class name="TestScripts.QALegendClientPageTest">
 	      	<methods>
 	      		<include name="addClient"></include>
 	      	</methods>
       	</class>-->
       	     	
-   	<!--	<class name="TestScripts.QALegendProjectsPageTest">
+   		<!--<class name="TestScripts.QALegendProjectsPageTest">
       		<methods>     			
       			<include name="addProject"></include>
       		</methods>
@@ -45,15 +43,22 @@
       	
   		<!--<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
-      			<exclude name="addItem"></exclude>
+      			<include name="addItem"></include>
       			<include name="editItem"></include>
-      			<exclude name="deleteItem"></exclude>
+      			<include name="deleteItem"></include>
       		</methods>
       	</class>-->
       	
-      	<!--<class name="TestScripts.QALegendAnnouncementPageTest">
+      	<class name="TestScripts.QALegendAnnouncementPageTest">
 	      	<methods>
 	      		<include name="addAnnouncement"></include>
+	      	</methods>
+      	</class>
+      	
+      	<!--<class name="TestScripts.QALegendEventPageTest">
+	      	<methods>
+	      		<include name="addEvent"></include>
+	      		<exclude name="editEvent"></exclude>
 	      	</methods>
       	</class>-->
       	     

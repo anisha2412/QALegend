@@ -6,13 +6,18 @@
     <listener class-name="TestScripts.Listeners"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="NotesTest"/>
+      </run>
+    </groups>
     <classes>
-      <class name="TestScripts.QALegendItemPageTest">
+      <class name="TestScripts.QAlegendNotePageTest">
         <methods>
           <include name="browserinitailzation"/>
-          <include name="editItem"/>
+          <include name="editNote"/>
         </methods>
-      </class> <!-- TestScripts.QALegendItemPageTest -->
+      </class> <!-- TestScripts.QAlegendNotePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

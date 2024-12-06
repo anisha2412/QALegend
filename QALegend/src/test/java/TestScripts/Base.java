@@ -43,7 +43,7 @@ public class Base {
 	QALegendNotePage notepage;
 	QALegendAnnouncementPage  announcementPage;
 	
-	@BeforeMethod(alwaysRun = true)                       // to always run this method before testcases
+	@BeforeMethod(alwaysRun = true, groups = {"NotesTest"})  // to always run this method before testcases
 	@Parameters({"browser"})
 	public void browserinitailzation(String browserName) throws Exception 
 	{		

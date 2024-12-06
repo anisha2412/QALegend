@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import Constants.Constants;
 import Utilities.FileUploadUtility;
 import Utilities.PageUtilities;
 import Utilities.WaitUtility;
@@ -37,10 +39,7 @@ public class QALegendNotePage {
 	
 	@FindBy(xpath = "(//a[@class='edit'])[2]")
 	WebElement note_editicon;                                                   // edit icon
-	
-	
-	
-	
+		
 	@FindBy(xpath = "//a[@title='Delete note' and contains(@class, 'delete')]")
 	WebElement note_deleteicon;                                                 // delete icon
 		
@@ -55,8 +54,7 @@ public class QALegendNotePage {
 		
 	@FindBy(xpath = "//td[@class='dataTables_empty']") 
 	WebElement empty_table;
-	
-	
+		
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
 		this.pageutilities = new PageUtilities(driver);
@@ -90,7 +88,9 @@ public class QALegendNotePage {
 	}
 	
 	public String getNoteFilePath() {
-		String filePath = "C:\\Users\\ANISHA\\git\\QALegend\\QALegend\\src\\main\\resources\\uploads\\selenium.jpg";
+		//String filePath = "C:\\Users\\ANISHA\\git\\QALegend\\QALegend\\src\\main\\resources\\uploads\\selenium.jpg";
+		
+		String filePath = Constants.NOTES_FILEPATH;
 		return filePath;
 	}
 	

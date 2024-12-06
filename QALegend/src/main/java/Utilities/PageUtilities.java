@@ -54,13 +54,11 @@ public class PageUtilities {
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("window.scrollBy(0,500)");
 	}
-	
-	
+		
 	public void scrollElement(WebElement element) {        
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView(true);", element);
 	}
-
 
 	public boolean isElementDisplayed(WebElement element) {
 		return(element.isDisplayed());			 // return result back
