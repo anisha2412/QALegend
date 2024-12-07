@@ -18,8 +18,8 @@ public class QALegendLoginPageTest extends Base {
 		String path = Constants.EXCEL_FILEPATH;		
 		String sheet_name = Constants.SHEET_NAME;		
 		String email = ExcelUtility.getStringData(0, 1, path, sheet_name);
-		String password = ExcelUtility.getStringData(1, 1, path, sheet_name);
+		String password = ExcelUtility.getIntegerData(1, 1, path, sheet_name);
 		loginpage.loginWithInvalidCredentials(email,password);
-		Assert.assertEquals(loginpage.checkAuthentication(), true);     
+		Assert.assertEquals(loginpage.checkAuthentication(), true);    
 	}
 }
