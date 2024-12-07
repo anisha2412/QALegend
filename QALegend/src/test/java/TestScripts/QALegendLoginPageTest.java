@@ -15,12 +15,11 @@ public class QALegendLoginPageTest extends Base {
 	
 	@Test
 	public void invalidLogin() throws IOException  {	   
-		int row = Constants.EXCEL_ROWCOUNT;
-		int colunm = Constants.EXCEL_COLUMNCOUNT;
 		String path = Constants.EXCEL_FILEPATH;		
 		String sheet_name = Constants.SHEET_NAME;		
-		String email = ExcelUtility.getStringData(row, colunm, path, sheet_name);
-		loginpage.loginWithInvalidCredentials(email,properties.getProperty("invalid_password"));
+		String email = ExcelUtility.getStringData(0, 1, path, sheet_name);
+		String password = ExcelUtility.getStringData(1, 1, path, sheet_name);
+		loginpage.loginWithInvalidCredentials(email,password);
 		Assert.assertEquals(loginpage.checkAuthentication(), true);     
 	}
 }
