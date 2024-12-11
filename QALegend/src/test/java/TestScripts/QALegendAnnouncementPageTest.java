@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import Utilities.FakeUtility;
 
-
 public class QALegendAnnouncementPageTest extends Base {
 	
 	public WebDriver driver;

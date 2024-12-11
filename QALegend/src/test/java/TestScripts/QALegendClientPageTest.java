@@ -3,12 +3,11 @@ package TestScripts;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import Utilities.FakeUtility;
 
 public class QALegendClientPageTest extends Base {
 	
-public WebDriver driver;
+	public WebDriver driver;
 	
 	@Test
 	public void addClient() throws InterruptedException {

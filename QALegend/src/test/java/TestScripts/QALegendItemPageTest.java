@@ -2,12 +2,8 @@ package TestScripts;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import Utilities.FakeUtility;
-import Utilities.WaitUtility;
-
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
 
 public class QALegendItemPageTest extends Base {
 	
@@ -20,7 +16,7 @@ public class QALegendItemPageTest extends Base {
 		itemspage.clickOnAddItemsBtn();                                                                   // clk Add item btn
 		String item_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
 				properties.getProperty("item_description"), 
-				properties.getProperty("item_rate"));   // pass values to item form to add new item				
+				properties.getProperty("item_rate"));   			
 		itemspage.searchItem(item_title);
 		Assert.assertEquals(itemspage.getItemTitle(), item_title);                            // for assertion compare 2 string values, title passed from testdata and value fetchd from added item title
 	}
@@ -32,7 +28,7 @@ public class QALegendItemPageTest extends Base {
 		itemspage.clickOnAddItemsBtn();                                                                   // clk Add item btn
 		String addeditem_title = itemspage.addItem(properties.getProperty("item_title") + FakeUtility.randomNumberGenerator(), 
 				properties.getProperty("item_description"), 
-				properties.getProperty("item_rate"));   // pass values to item form to add new item				
+				properties.getProperty("item_rate"));   			
 		itemspage.searchItem(addeditem_title);				
 		itemspage.clickOnEditItemiIcon();
 		itemspage.clearItemTitlefield();

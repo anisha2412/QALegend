@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Constants.Constants;
 import Utilities.FileUploadUtility;
 import Utilities.PageUtilities;
@@ -87,9 +86,7 @@ public class QALegendNotePage {
 		pageutilities.enterTextOnWebElement(note_searchbox, title);
 	}
 	
-	public String getNoteFilePath() {
-		//String filePath = "C:\\Users\\ANISHA\\git\\QALegend\\QALegend\\src\\main\\resources\\uploads\\selenium.jpg";
-		
+	public String getNoteFilePath() {				
 		String filePath = Constants.NOTES_FILEPATH;
 		return filePath;
 	}

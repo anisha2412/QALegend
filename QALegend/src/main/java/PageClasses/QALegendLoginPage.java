@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Utilities.PageUtilities;
 
 public class QALegendLoginPage {
@@ -23,8 +22,7 @@ public class QALegendLoginPage {
 	
 	@FindBy(xpath = "//span[@class='glyphicon glyphicon-exclamation-sign']//following::span")
 	WebElement authentication_msg;
-	
-		
+			
 	public QALegendLoginPage(WebDriver driver) {	      // const. made by default when loginpage object initalized	
 		this.driver= driver;				
 		this.pageutilities = new PageUtilities(driver);   // object inilization | const. for PageUtilities.java will be created automatically

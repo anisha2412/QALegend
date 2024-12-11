@@ -1,18 +1,16 @@
 package TestScripts;
 
-
 import java.io.IOException;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-
+import com.aventstack.extentreports.Status;
 
 import Utilities.ExtentReportNG;
+import Utilities.ScreenShotUtility;
 
 public class Listeners extends Base implements ITestListener {
 	
@@ -36,35 +34,21 @@ public class Listeners extends Base implements ITestListener {
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		ITestListener.super.onTestSuccess(result);
-		extenttest.get().log(com.aventstack.extentreports.Status.PASS, "Testcase Passed");
+		extenttest.get().log(Status.PASS, "Testcase Passed");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
 		ITestListener.super.onTestFailure(result);
-		extenttest.get().fail(result.getThrowable());                    // get failure result from console
-		
-//		String testmethodname = result.getMethod().getMethodName();
-//		try { // fetching driver 
-//			 driver = (WebDriver)result.getTestClass().getRealClass().getDeclaredField("driver").get(result.getInstance());
-//		} catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException e) {
-//			e.printStackTrace();
-//		}
-//		try {
-//			extenttest.get().addScreenCaptureFromPath(getScreenshotPath(testmethodname), result.getMethod().getMethodName());// ss method calling	
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-		
-		extenttest.get().log(com.aventstack.extentreports.Status.FAIL, "Testcase Failed");
-		
+		extenttest.get().fail(result.getThrowable());
+		extenttest.get().log(Status.FAIL,"Test case Failed");		
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
 		ITestListener.super.onTestSkipped(result);
-		extenttest.get().log(com.aventstack.extentreports.Status.SKIP, "Testcase Skipped");
+		extenttest.get().log(Status.SKIP, "Testcase Skipped");
 	}
 
 	@Override

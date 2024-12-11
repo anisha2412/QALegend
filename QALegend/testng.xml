@@ -41,19 +41,19 @@
       		</methods>
       	</class>-->
       	
-  		<!--<class name="TestScripts.QALegendItemPageTest">
+  		<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<include name="addItem"></include>
-      			<include name="editItem"></include>
-      			<include name="deleteItem"></include>
+      			<exclude name="editItem"></exclude>
+      			<exclude name="deleteItem"></exclude>
       		</methods>
-      	</class>-->
+      	</class>
       	
-      	<class name="TestScripts.QALegendAnnouncementPageTest">
+   <!--   	<class name="TestScripts.QALegendAnnouncementPageTest">
 	      	<methods>
 	      		<include name="addAnnouncement"></include>
 	      	</methods>
-      	</class>
+      	</class>-->
       	
       	<!--<class name="TestScripts.QALegendEventPageTest">
 	      	<methods>

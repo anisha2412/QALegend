@@ -55,7 +55,6 @@ public class QALegendProjectsPage {
 		pageutilities.enterTextOnWebElement(project_titlefield, title);		
 		pageutilities.clickOnElement(client_dropdown);
 		WaitUtility.waitForVisiblityOfAnElement(driver, client_list);				
-//		pageutilities.enterTextOnWebElement(clientsearch_textbox, "Obsqura asjmhf");
 		pageutilities.enterKeyPress();		
 		pageutilities.enterTextOnWebElement(project_deadlinefield, deadline);
 		pageutilities.clickOnElement(project_savebtn);
