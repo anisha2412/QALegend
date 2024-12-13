@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Suite" class="navigator-link ">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestScripts.QALegendItemPageTest" class="method navigator-link" hash-for-method="addItem">addItem</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="TestScripts.QAlegendNotePageTest" class="method navigator-link" hash-for-method="addNote">addNote</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestScripts.QALegendItemPageTest</span>
+              <span class="class-name">TestScripts.QAlegendNotePageTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="addItem">
-                  </a> <!-- addItem -->
-                  <span class="method-name">addItem</span>
+                  <a name="addNote">
+                  </a> <!-- addNote -->
+                  <span class="method-name">addNote</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -154,13 +154,13 @@
       &lt;/run&gt;
     &lt;/groups&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestScripts.QALegendItemPageTest&quot;&gt;
+      &lt;class name=&quot;TestScripts.QAlegendNotePageTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;addItem&quot;/&gt;
-          &lt;exclude name=&quot;editItem&quot;/&gt;
-          &lt;exclude name=&quot;deleteItem&quot;/&gt;
+          &lt;include name=&quot;addNote&quot;/&gt;
+          &lt;exclude name=&quot;editNote&quot;/&gt;
+          &lt;exclude name=&quot;deleteNote&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- TestScripts.QALegendItemPageTest --&gt;
+      &lt;/class&gt; &lt;!-- TestScripts.QAlegendNotePageTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -184,6 +184,14 @@
             <span class="header-content">Groups for Suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">NotesTest</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">addNote</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Suite" class="panel">
@@ -202,14 +210,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'addItem')
-data.setCell(0, 2, 'TestScripts.QALegendItemPageTest')
-data.setCell(0, 3, 4958);
+data.setCell(0, 1, 'addNote')
+data.setCell(0, 2, 'TestScripts.QAlegendNotePageTest')
+data.setCell(0, 3, 6069);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 seconds</span>
+              <span class="suite-total-time">Total running time: 6 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -228,11 +236,11 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">TestScripts.QALegendItemPageTest</span>
+              <span class="ignored-class-name">TestScripts.QAlegendNotePageTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">deleteItem</span>
+                <span class="ignored-method-name">editNote</span>
                 <br/>
-                <span class="ignored-method-name">editItem</span>
+                <span class="ignored-method-name">deleteNote</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -244,18 +252,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestScripts.QALegendItemPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestScripts.QAlegendNotePageTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">browserinitailzation(Chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">addItem</span>
-                <span class="method-start">4381 ms</span>
+                <span class="method-name">addNote</span>
+                <span class="method-start">5071 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">AfterMethod([TestResult name=addItem status=SUCCESS method=QALegendItemPageTest.addItem()[pri:1, instance:TestSc...)</span>
-                <span class="method-start">9342 ms</span>
+                <span class="method-name">AfterMethod([TestResult name=addNote status=SUCCESS method=QAlegendNotePageTest.addNote()[pri:0, instance:TestSc...)</span>
+                <span class="method-start">11150 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
