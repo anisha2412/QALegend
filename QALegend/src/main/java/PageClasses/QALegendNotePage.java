@@ -77,6 +77,7 @@ public class QALegendNotePage {
 	}
 	
 	public String getNoteTitle() {
+		WaitUtility.waitForVisiblityOfAnElement(driver, note_editicon); 
 		String note_title = note_notetitle.getText();
 		return note_title;
 	}

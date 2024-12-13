@@ -12,13 +12,13 @@
       </run>
     </groups>
     <classes>
-      <class name="TestScripts.QALegendItemPageTest">
+      <class name="TestScripts.QAlegendNotePageTest">
         <methods>
           <include name="browserinitailzation"/>
           <include name="AfterMethod"/>
-          <include name="addItem"/>
+          <include name="editNote"/>
         </methods>
-      </class> <!-- TestScripts.QALegendItemPageTest -->
+      </class> <!-- TestScripts.QAlegendNotePageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -64,6 +64,7 @@ public class QALegendItemPage {
 	}
 	
 	public String getItemTitle() {                         // to fetch title value
+		WaitUtility.waitForVisiblityOfAnElement(driver, item_editicon);
 		String itemtitle = table_itemtitle.getText();
 		return itemtitle;
 	}
