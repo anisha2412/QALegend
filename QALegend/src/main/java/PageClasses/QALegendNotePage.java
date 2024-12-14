@@ -60,7 +60,7 @@ public class QALegendNotePage {
 		PageFactory.initElements(driver, this);
 	}
 		
-	public String addNote(String title) throws AWTException, InterruptedException  {
+	public String addNote(String title) throws AWTException, InterruptedException   {
 	    pageutilities.enterTextOnWebElement(note_titlefield, title);        	       
 	    pageutilities.clickOnElement(note_label);
 	    pageutilities.enterKeyPress();	    	    

@@ -11,7 +11,7 @@ public class QAlegendNotePageTest extends Base {
 	public WebDriver driver;
 		
 	@Test(groups = {"NotesTest"})
-	public void addNote() throws InterruptedException, AWTException {
+	public void addNote() throws AWTException, InterruptedException {
 	    loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 	    homepage.clickOnDashboardNotesBtn(); 
 	    notepage.clickOnAddNotebtn();
@@ -21,7 +21,7 @@ public class QAlegendNotePageTest extends Base {
 	}
 	
 	@Test(groups = {"NotesTest"})
-	public void editNote() throws AWTException  {
+	public void editNote() throws AWTException, InterruptedException  {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 		homepage.clickOnDashboardNotesBtn();
 		notepage.clickOnAddNotebtn();
@@ -36,7 +36,7 @@ public class QAlegendNotePageTest extends Base {
 	}
 	
 	@Test(groups = {"NotesTest"})
-	public void deleteNote() throws AWTException {
+	public void deleteNote() throws AWTException, InterruptedException {
 		loginpage.loginToQALegend(properties.getProperty("email"), properties.getProperty("password"));  
 		homepage.clickOnDashboardNotesBtn(); 		
 		notepage.clickOnAddNotebtn();
