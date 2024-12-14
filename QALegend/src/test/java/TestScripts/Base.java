@@ -42,7 +42,7 @@ public class Base {
 	@Parameters({"browser"})
 	public void browserinitailzation(String browserName) throws Exception 
 	{		
-		properties = new Properties();                    // initalization
+		properties = new Properties();                    // pptys cls obj - initalization
 		fis = new FileInputStream(Constants.CONFIGFILE);  // classname.varname [to acces static var] | ppty file path
 		properties.load(fis);                             // load congfig file to read
 		

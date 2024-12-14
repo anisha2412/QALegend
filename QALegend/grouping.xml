@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+
+	<listeners>
+    	<listener class-name="TestScripts.Listeners"></listener>
+	</listeners>
+
+	<parameter name="browser" value="Chrome"></parameter>
+  	<test thread-count="5" name="Test">
+  	<groups>
+  		<run>
+  			<include name = "NotesTest"></include>
+  		</run>
+  	</groups>
+   	<classes>
+        	    
+    	<class name="TestScripts.QAlegendNotePageTest">
+      		
+      	</class>
+      	    	     
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

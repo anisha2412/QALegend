@@ -7,16 +7,10 @@
 	</listeners>
 
 	<parameter name="browser" value="Chrome"></parameter>
-  	<test thread-count="5" name="Test">
+  	<test thread-count="3" name="Test" parallel="methods">
   	
    	<classes>
-   
-   		<class name="TestScripts.QALegendLoginPageTest">
-	      	<methods>
-	      		<include name="invalidLogin"></include>
-	      	</methods>
-      	</class>
-      	    
+     
     	<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<include name="addNote"></include>
@@ -24,19 +18,7 @@
       			<include name="deleteNote"></include>
       		</methods>
       	</class>
-      	
-   	<class name="TestScripts.QALegendClientPageTest">
-	      	<methods>
-	      		<include name="addClient"></include>
-	      	</methods>
-      	</class>
-      	     	
-   	<class name="TestScripts.QALegendProjectsPageTest">
-      		<methods>     			
-      			<include name="addProject"></include>
-      		</methods>
-      	</class>
-      	
+      	   	
   		<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<include name="addItem"></include>
@@ -44,13 +26,7 @@
       			<include name="deleteItem"></include>
       		</methods>
       	</class>
-      	
-      	<class name="TestScripts.QALegendAnnouncementPageTest">
-	      	<methods>
-	      		<include name="addAnnouncement"></include>
-	      	</methods>
-      	</class>     	
-      	    	     
+      	    	    	     
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

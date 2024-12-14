@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+
+	<listeners>
+    	<listener class-name="TestScripts.Listeners"></listener>
+	</listeners>
+
+
+  	<test thread-count="5" name="Test">
+  		<parameter name="browser" value="Chrome"></parameter> 
+   	<classes>  
+   		<class name="TestScripts.QALegendLoginPageTest">
+	      	<methods>
+	      		<include name="invalidLogin"></include>
+	      	</methods>
+      	</class>
+    </classes>  
+    </test>
+    
+      <test thread-count="5" name="Test1">
+  		<parameter name="browser" value="Firefox"></parameter>	
+  	<classes>    
+    	<class name="TestScripts.QAlegendNotePageTest">
+      		<methods>     			
+      			<include name="addNote"></include>
+      			<include name="editNote"></include>
+      			<include name="deleteNote"></include>
+      		</methods>
+      	</class>
+      	</classes>     	
+      </test>
+      
+     
+      <test thread-count="5" name="Test2">
+  		<parameter name="browser" value="Edge"></parameter>	
+  	<classes> 
+   	<class name="TestScripts.QALegendClientPageTest">
+	      	<methods>
+	      		<include name="addClient"></include>
+	      	</methods>
+      	</class>
+      	</classes>     	
+      </test>
+      	     	
+   </suite> <!-- Suite -->
