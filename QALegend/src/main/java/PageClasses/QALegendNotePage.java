@@ -54,8 +54,9 @@ public class QALegendNotePage {
 	@FindBy(xpath = "//td[@class='dataTables_empty']") 
 	WebElement empty_table;
 	
-	@FindBy(xpath = "(//div[@class='ps__thumb-y'])[13]")
-	WebElement scrollbar;
+	
+	@FindBy(xpath = "//span[@class='delete']")
+	WebElement filepreview_closebtn;
 		
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
@@ -69,8 +70,9 @@ public class QALegendNotePage {
 	    pageutilities.enterKeyPress();	    	    
 	    pageutilities.clickOnElement(note_uploadfilebtn);	    
 	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  	    
-	  //  WaitUtility.waitForVisiblityOfAnElement(driver, filepreview_closebtn); 
-	    pageutilities.scrollElement(scrollbar);	    
+	   // Thread.sleep(4000);
+//	    WaitUtility.waitForVisiblityOfAnElement(driver, filepreview_closebtn); 
+	    pageutilities.scrollElement(filepreview_closebtn);	    
 	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 	    
 	    pageutilities.clickOnElement(note_savbtn);	    
 	    return title;        
