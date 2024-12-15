@@ -53,6 +53,10 @@ public class QALegendNotePage {
 		
 	@FindBy(xpath = "//td[@class='dataTables_empty']") 
 	WebElement empty_table;
+	
+	
+	@FindBy(xpath = "//span[@class='delete']")
+	WebElement filepreview_closebtn;
 		
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
@@ -60,13 +64,14 @@ public class QALegendNotePage {
 		PageFactory.initElements(driver, this);
 	}
 		
-	public String addNote(String title) throws AWTException, InterruptedException   {
+	public String addNote(String title) throws AWTException   {
 	    pageutilities.enterTextOnWebElement(note_titlefield, title);        	       
 	    pageutilities.clickOnElement(note_label);
 	    pageutilities.enterKeyPress();	    	    
 	    pageutilities.clickOnElement(note_uploadfilebtn);	    
 	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  	    
-	    Thread.sleep(4000);
+	   // Thread.sleep(4000);
+	    WaitUtility.waitForVisiblityOfAnElement(driver, filepreview_closebtn); 
 	    pageutilities.scrollElement(file_preview);	    
 	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 	    
 	    pageutilities.clickOnElement(note_savbtn);	    
