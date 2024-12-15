@@ -2,15 +2,15 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-15T12:25:56 IST" name="Suite" finished-at="2024-12-15T12:26:06 IST" duration-ms="10024">
+  <suite started-at="2024-12-15T12:40:08 IST" name="Suite" finished-at="2024-12-15T12:40:18 IST" duration-ms="9961">
     <groups>
       <group name="NotesTest">
         <method signature="QAlegendNotePageTest.addNote()[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" name="addNote" class="TestScripts.QAlegendNotePageTest"/>
       </group> <!-- NotesTest -->
     </groups>
-    <test started-at="2024-12-15T12:25:56 IST" name="Test" finished-at="2024-12-15T12:26:06 IST" duration-ms="10024">
+    <test started-at="2024-12-15T12:40:08 IST" name="Test" finished-at="2024-12-15T12:40:18 IST" duration-ms="9961">
       <class name="TestScripts.QAlegendNotePageTest">
-        <test-method is-config="true" signature="browserinitailzation(java.lang.String)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-15T12:25:56 IST" name="browserinitailzation" finished-at="2024-12-15T12:26:00 IST" duration-ms="3846" status="PASS">
+        <test-method is-config="true" signature="browserinitailzation(java.lang.String)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-15T12:40:08 IST" name="browserinitailzation" finished-at="2024-12-15T12:40:12 IST" duration-ms="3738" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,11 +21,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserinitailzation -->
-        <test-method signature="addNote()[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-15T12:26:00 IST" name="addNote" finished-at="2024-12-15T12:26:06 IST" duration-ms="5726" status="PASS">
+        <test-method signature="addNote()[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-15T12:40:12 IST" name="addNote" finished-at="2024-12-15T12:40:18 IST" duration-ms="5729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNote -->
-        <test-method is-config="true" signature="AfterMethod(org.testng.ITestResult)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-15T12:26:06 IST" name="AfterMethod" finished-at="2024-12-15T12:26:06 IST" duration-ms="382" status="PASS">
+        <test-method is-config="true" signature="AfterMethod(org.testng.ITestResult)[pri:0, instance:TestScripts.QAlegendNotePageTest@4eaf3684]" started-at="2024-12-15T12:40:18 IST" name="AfterMethod" finished-at="2024-12-15T12:40:18 IST" duration-ms="396" status="PASS">
           <params>
             <param index="0">
               <value>
