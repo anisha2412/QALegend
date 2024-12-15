@@ -8,17 +8,14 @@
 
 	<parameter name="browser" value="Chrome"></parameter>
   	<test thread-count="5" name="Test">
-  	<groups>
-  		<run>
-  			<include name = "NotesTest"></include>
-  		</run>
-  	</groups>
-   	<classes>
-        	    
-    	<class name="TestScripts.QAlegendNotePageTest">
-      		
-      	</class>
-      	    	     
-    </classes>
+  		<groups>
+		  	<run>
+		  		<include name = "NotesTest"></include>
+		  	</run>
+  		</groups>
+	   	<classes>	        	    
+	    	<class name="TestScripts.QAlegendNotePageTest"></class>	      	    	     
+	    </classes>
+	    
   </test> <!-- Test -->
 </suite> <!-- Suite -->

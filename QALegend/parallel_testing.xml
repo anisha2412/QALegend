@@ -9,24 +9,15 @@
 	<parameter name="browser" value="Chrome"></parameter>
   	<test thread-count="3" name="Test" parallel="methods">
   	
-   	<classes>
-     
-    	<class name="TestScripts.QAlegendNotePageTest">
-      		<methods>     			
-      			<include name="addNote"></include>
-      			<include name="editNote"></include>
-      			<include name="deleteNote"></include>
-      		</methods>
-      	</class>
-      	   	
+   	<classes>       	
   		<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<include name="addItem"></include>
       			<include name="editItem"></include>
       			<include name="deleteItem"></include>
       		</methods>
-      	</class>
-      	    	    	     
+      	</class>     	    	    	     
     </classes>
+    
   </test> <!-- Test -->
 </suite> <!-- Suite -->

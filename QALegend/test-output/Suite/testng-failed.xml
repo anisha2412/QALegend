@@ -5,15 +5,16 @@
   <listeners>
     <listener class-name="TestScripts.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test(failed)">
     <classes>
-      <class name="TestScripts.QAlegendNotePageTest">
+      <class name="TestScripts.QALegendItemPageTest">
         <methods>
           <include name="browserinitailzation"/>
           <include name="AfterMethod"/>
-          <include name="addNote"/>
+          <include name="editItem"/>
+          <include name="addItem"/>
         </methods>
-      </class> <!-- TestScripts.QAlegendNotePageTest -->
+      </class> <!-- TestScripts.QALegendItemPageTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

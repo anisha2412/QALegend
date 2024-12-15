@@ -53,13 +53,6 @@ public class QALegendNotePage {
 		
 	@FindBy(xpath = "//td[@class='dataTables_empty']") 
 	WebElement empty_table;
-	
-	
-	@FindBy(xpath = "//div[@style='height: 90px; position: relative;']")
-	WebElement filediv;
-	
-	
-	
 		
 	public QALegendNotePage(WebDriver driver) {
 		this.driver=driver;
@@ -73,8 +66,6 @@ public class QALegendNotePage {
 	    pageutilities.enterKeyPress();	    	    
 	    pageutilities.clickOnElement(note_uploadfilebtn);	    
 	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  	    
-	   // Thread.sleep(4000);
-	    WaitUtility.waitForAttributeToBe(driver, filediv, "class", "post-file-dropzone-scrollbar ps ps--active-y");
 	    pageutilities.scrollElement(file_preview);	    
 	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 	    
 	    pageutilities.clickOnElement(note_savbtn);	    

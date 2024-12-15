@@ -1,4 +1,3 @@
-
 // File path for file accessing, common values are set in this class.
 
 package Constants;
