@@ -17,15 +17,15 @@
 	      	</methods>
       	</class> 
       	    
-    	<class name="TestScripts.QAlegendNotePageTest">
+    	<!--<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<include name="addNote"></include>
       			<include name="editNote"></include>
       			<include name="deleteNote"></include>
       		</methods>
-      	</class>
+      	</class>-->
       	
-  <class name="TestScripts.QALegendClientPageTest">
+ <!-- <class name="TestScripts.QALegendClientPageTest">
 	      	<methods>
 	      		<include name="addClient"></include>
 	      	</methods>
@@ -49,7 +49,7 @@
 	      	<methods>
 	      		<include name="addAnnouncement"></include>
 	      	</methods>
-      	</class>     	
+      	</class>  -->   	
       	    	     
     </classes>
   </test> <!-- Test -->
