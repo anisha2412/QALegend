@@ -60,13 +60,12 @@ public class QALegendNotePage {
 		PageFactory.initElements(driver, this);
 	}
 		
-	public String addNote(String title) throws AWTException, InterruptedException   {
+	public String addNote(String title) throws AWTException   {
 	    pageutilities.enterTextOnWebElement(note_titlefield, title);        	       
 	    pageutilities.clickOnElement(note_label);
 	    pageutilities.enterKeyPress();	    	    
 	    pageutilities.clickOnElement(note_uploadfilebtn);	    
 	    FileUploadUtility.fileUploadUsingRobotClass(getNoteFilePath());  
-	    Thread.sleep(8000);
 	    pageutilities.scrollElement(file_preview);	    
 	    WaitUtility.waitForVisiblityOfAnElement(driver, file_preview); 	    
 	    pageutilities.clickOnElement(note_savbtn);	    

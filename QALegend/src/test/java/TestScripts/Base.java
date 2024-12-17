@@ -47,7 +47,8 @@ public class Base {
 		properties.load(fis);                             // load congfig file to read
 		
 		if(browserName.equalsIgnoreCase("Chrome")) {
-			driver = new ChromeDriver();			
+			driver = new ChromeDriver();	
+			
 		}
 		else if(browserName.equalsIgnoreCase("Firefox")) {
 			driver = new FirefoxDriver();			
