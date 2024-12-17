@@ -31,13 +31,13 @@
 	      	</methods>
       	</class>
       	     	
-   	 <!-- <class name="TestScripts.QALegendProjectsPageTest">
+   	  <class name="TestScripts.QALegendProjectsPageTest">
       		<methods>     			
       			<include name="addProject"></include>
       		</methods>
       	</class>
       	
-  		<class name="TestScripts.QALegendItemPageTest">
+  	<!--	<class name="TestScripts.QALegendItemPageTest">
       		<methods>     			
       			<include name="addItem"></include>
       			<include name="editItem"></include>
