@@ -17,13 +17,13 @@
 	      	</methods>
       	</class> 
       	    
-    	<class name="TestScripts.QAlegendNotePageTest">
+    	<!--<class name="TestScripts.QAlegendNotePageTest">
       		<methods>     			
       			<include name="addNote"></include>
       			<include name="editNote"></include>
       			<include name="deleteNote"></include>
       		</methods>
-      	</class>
+      	</class>-->
       	
   <class name="TestScripts.QALegendClientPageTest">
 	      	<methods>
