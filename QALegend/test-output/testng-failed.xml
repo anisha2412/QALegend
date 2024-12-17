@@ -10,6 +10,7 @@
       <class name="TestScripts.QALegendItemPageTest">
         <methods>
           <include name="browserinitailzation"/>
+          <include name="deleteItem"/>
           <include name="AfterMethod"/>
           <include name="editItem"/>
           <include name="addItem"/>
